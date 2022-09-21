@@ -1,0 +1,21 @@
+# Testcase 2C
+# -----------
+# Test invalid take and leave commands
+# valid take and leave
+t
+d
+l
+d
+# take and leave blank line
+t
+
+l
+
+# take and leave non-existant item
+t
+x
+l
+x
+
+# die with 0 points
+s

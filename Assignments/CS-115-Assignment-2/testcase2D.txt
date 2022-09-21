@@ -1,0 +1,38 @@
+# Testcase 2D
+# -----------
+# Solution
+t
+d
+n
+n
+n
+n
+e
+e
+e
+e
+e
+t
+a
+t
+c
+w
+w
+s
+s
+s
+e
+t
+e
+s
+s
+e
+e
+e
+t
+b
+w
+n
+n
+# about to win with 6 points
+e

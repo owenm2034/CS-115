@@ -1,0 +1,31 @@
+# Testcase 1C
+# -----------
+# Test all input commands
+# test blank lines
+
+
+
+
+
+# test all legal moves
+w
+e
+n
+s
+
+# test invalid input
+yes
+XXX
+N
+S
+E
+W
+Q
+
+# go to blizzard (easy message for testing)
+n
+n
+
+# done, quit
+q
+y

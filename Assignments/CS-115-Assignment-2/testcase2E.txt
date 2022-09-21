@@ -1,0 +1,37 @@
+# Testcase 2E
+# -----------
+# Test take and leave commands when items are elsewhere
+# valid and duplicate take and leave
+t
+d
+t
+d
+l
+d
+l
+d
+# invalid take and leave
+t
+a
+l
+a
+# invalid leave and take
+l
+e
+t
+e
+# check where items are
+n
+s
+i
+# David (d) should have been here, inventory empty
+# collect all mentioned items (some not possible)
+t
+a
+t
+d
+t
+e
+i
+# die with 1 point
+s

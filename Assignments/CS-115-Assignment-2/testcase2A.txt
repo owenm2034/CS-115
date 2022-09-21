@@ -1,0 +1,7 @@
+# Testcase 2A
+# -----------
+# Test inventory with no items
+# print inventory with no items, should print nothing
+i
+q
+y

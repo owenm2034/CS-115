@@ -1,0 +1,5 @@
+# Testcase 1A
+# -----------
+# Test death node, basic move
+# move to death node and die
+s

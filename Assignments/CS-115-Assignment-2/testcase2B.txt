@@ -1,0 +1,45 @@
+# Testcase 2B
+# -----------
+# Test take and leave items, inventory with items, points at end
+t
+d
+# print inventory with 1 item: David (d)
+i
+n
+n
+n
+n
+e
+e
+e
+e
+e
+t
+a
+w
+w
+s
+s
+s
+e
+s
+s
+e
+e
+e
+t
+b
+l
+d
+w
+l
+a
+e
+t
+d
+w
+# print inventory with 2 items: David (d), Benny and Bobby (b)
+i
+# quit with 3 points
+q
+y

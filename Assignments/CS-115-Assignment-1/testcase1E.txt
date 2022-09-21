@@ -1,0 +1,102 @@
+# Testcase 1E
+# -----------
+# Test all invalid move commands
+
+# test north into inaccessible
+n
+e
+n
+# previous move should have failed
+
+# test south into inaccessible
+w
+n
+n
+e
+n
+e
+s
+# previous move should have failed
+
+# test east into inaccessible
+e
+s
+s
+s
+e
+e
+# previous move should have failed
+
+# test west into inaccessible
+s
+w
+# previous move should have failed
+
+# test north off the edge of the world
+n
+w
+n
+n
+n
+n
+# previous move should have failed
+
+# test south off the edge of the world
+s
+s
+s
+e
+s
+s
+s
+# previous move should have failed
+
+# test east off the edge of the world
+e
+e
+e
+e
+# previous move should have failed
+
+# test west off the edge of the world
+w
+w
+w
+n
+n
+w
+n
+n
+n
+w
+w
+s
+w
+s
+s
+s
+w
+w
+# previous move should have failed
+
+# go to victory node
+e
+n
+n
+n
+n
+e
+e
+e
+s
+s
+s
+e
+s
+s
+e
+e
+n
+n
+# about to win
+e
