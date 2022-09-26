@@ -14,26 +14,31 @@ struct Item {
     char itemId;
     int startingRow;
     int startingCol;
-    bool inPLayerInventory;
+    int currentRow;
+    int currentCol;
+    bool inPlayerInventory;
     int points;
-    string itemDescription;
+    string itemWorldDescription;
+    string itemInventoryDescription;
 };
 
 //
 //  itemInit
 //
-//  Purpose: PUT TEXT HERE
+//  Purpose: initializes an Item.
 //  Parameter(s):
-//    <1> item: 
-//    <2> id1:
-//    <3> row1:
-//    <4> column1:
-//    <5> points1:
-//    <6> world_description1:
-//    <7> inventory_description1:
-//  Precondition(s): PUT TEXT HERE
+//    <1> item: the item to initialize
+//    <2> id1: the id to access the item with
+//    <3> row1: the starting row position of the item
+//    <4> column1: the starting column position of the item
+//    <5> points1: represents the amount of points this item is worth
+//    <6> world_description1: description of the item when its in the world
+//    <7> inventory_description1: description of the item when its in the players inventory
+//  Precondition(s): N/A
 //  Returns: N/A
-//  Side Effect: PUT TEXT HERE
+//  Side Effect: N/A
+//  Postcondition(s):
+//    <1> The given item will be initialized with the provided data
 //
 void itemInit (Item& item, char id1, 
                int row1, int column1, 
@@ -44,50 +49,64 @@ void itemInit (Item& item, char id1,
 //
 //  itemDebugPrint
 //
-//  Purpose: PUT TEXT HERE
+//  Purpose: Prints all fields of the item
 //  Parameter(s):
-//    <1> item: 
-//  Precondition(s): PUT TEXT HERE
+//    <1> item: the item to debug
+//  Precondition(s): N/A
 //  Returns: N/A
-//  Side Effect: PUT TEXT HERE
+//  Side Effect: N/A
+//  Postcondition(s): Prints all item data
 //
 void itemDebugPrint (const Item& item);
 
 //
 //  itemGetId
 //
-//  Purpose: PUT TEXT HERE
+//  Purpose: Retrieves an items id
 //  Parameter(s):
-//    <1> item: 
-//  Precondition(s): PUT TEXT HERE
-//  Returns: A char containing PUT TEXT HERE
-//  Side Effect: PUT TEXT HERE
+//    <1> item: item to retrieve id from
+//  Precondition(s):
+//    <1> item has an id
+//  Returns: A char containing an items id
+//  Side Effect: N/A
+//  Postcondition(s):
+//    <1> the given item's id is returned
 //
 char itemGetId (const Item& item);
 
 //
 //  itemIsInInventory
 //
-//  Purpose: PUT TEXT HERE
+//  Purpose: return a boolean that tells if the item is in a players inventory
 //  Parameter(s):
-//    <1> item: 
-//  Precondition(s): PUT TEXT HERE
-//  Returns: A boolean 
-//  Side Effect: PUT TEXT HERE
+//    <1> item: item check if its in an inventory
+//  Precondition(s):
+//    <1> item has been initialized
+//  Returns: A boolean:
+//    <T> true if the item is in the player's inventory
+//    <F> false if the item isn't in the players inventory
+//  Side Effect: N/A
+//  Postcondition(s):
+//    <1> Boolean returned indicating whether the item is in the player's inventory
 //
 bool itemIsInInventory (const Item& item);
 
 //
 //  itemIsAtLocation
 //
-//  Purpose: PUT TEXT HERE
+//  Purpose: This function returns whether an item is at a given location
 //  Parameter(s):
-//    <1> item: 
-//    <2> row:
-//    <3> column:
-//  Precondition(s): PUT TEXT HERE
-//  Returns: A boolean detailing
-//  Side Effect: PUT TEXT HERE
+//    <1> item: The item to check the location of
+//    <2> row: the row to check for item
+//    <3> column: the column to check for item
+//  Precondition(s): 
+//    <1> item has been initialized with a position in the World
+//  Returns: A boolean:
+//    <T> true if item was at position [row,column]
+//    <F> falseif item wasn't at position [row, column]
+//  Side Effect: N/A
+//  Postocndition(s):
+//    <1> boolean is returned regarding item's location 
 //
 bool itemIsAtLocation (const Item& item,
                        int row, int column);
@@ -95,61 +114,79 @@ bool itemIsAtLocation (const Item& item,
 //
 //  itemGetPlayerPoints
 //
-//  Purpose: PUT TEXT HERE
+//  Purpose: Returns how many points the player current has from the item.
+//           If the item is not in the player's inventory, the function should return 0.
 //  Parameter(s):
-//    <1> item: 
-//  Precondition(s): PUT TEXT HERE
-//  Returns: An int 
-//  Side Effect: PUT TEXT HERE
-//                     
+//    <1> item: item to retrieve point value from
+//  Precondition(s): 
+//    <1> item has been initialized
+//  Returns: An int containing the point value of item
+//  Side Effect: N/A
+//  Postcondition(s):
+//    <1> The item's point value is returned                  
+//   
 int itemGetPlayerPoints (const Item& item);
 
 //
 //  itemPrintDescription
 //
-//  Purpose: PUT TEXT HERE
+//  Purpose: If the item is in the player's inventory, the function will print the 
+//           inventory description; otherwise it will print the world description.
 //  Parameter(s):
-//    <1> item: 
-//  Precondition(s): PUT TEXT HERE
+//    <1> item: item to print description of
+//  Precondition(s): 
+//    <1> item has been initialized
 //  Returns: N/A
-//  Side Effect: PUT TEXT HERE
+//  Side Effect: N/A
+//  Postcondition(s):
+//    <1>  The item's description is printed based on its state
 //
 void itemPrintDescription (const Item& item);
 
 //
 //  itemReset
 //
-//  Purpose: PUT TEXT HERE
+//  Purpose: Moves the item to its starting location and set it to not be in the 
+//           player’s inventory.
 //  Parameter(s):
-//    <1> item: 
-//  Precondition(s): PUT TEXT HERE
+//    <1> item: the item to reset
+//  Precondition(s): N/A
 //  Returns: N/A
-//  Side Effect: PUT TEXT HERE
+//  Side Effect: N/A
+//  Postcondition(s): 
+//    <1> Item's position is set to [startingRow, startingCol] and inPlayerInventory is set
+//        to false.
 //
 void itemReset (Item& item);
 
 //
 //  itemMoveToInventory
 //
-//  Purpose: PUT TEXT HERE
+//  Purpose: Change an item's state so it is in a player's inventory
 //  Parameter(s):
-//    <1> item: 
-//  Precondition(s): PUT TEXT HERE
+//    <1> item: item to move to player inventory
+//  Precondition(s): 
+//    <1> Item has been initialized
 //  Returns: N/A
-//  Side Effect: PUT TEXT HERE
+//  Side Effect: N/A
+//  Postcondition(s):
+//    <1> the item's inPlayerInventory boolean is set to true
 //
 void itemMoveToInventory (Item& item);
 
 //
 //  itemMoveLocation
 //
-//  Purpose: PUT TEXT HERE
+//  Purpose: Moves an item from its current position to a given one
 //  Parameter(s):
-//    <1> item: 
-//    <2> row:
-//    <3> column:
-//  Precondition(s): PUT TEXT HERE
+//    <1> item: the item to move
+//    <2> row: the row to move it to
+//    <3> column: the column to move it to
+//  Precondition(s):
 //  Returns: N/A
-//  Side Effect: PUT TEXT HERE
+//  Side Effect: N/A
+//  Postcondition(s):
+//    <1> Item is moved to the given location
+//    <2> Item is set to be not in the players inventory
 //
 void itemMoveToLocation (Item& item, int row, int column);

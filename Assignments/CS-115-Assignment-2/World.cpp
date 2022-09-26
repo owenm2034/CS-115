@@ -1,224 +1,160 @@
-/*
-*   Author: Philip Pitura   
-*   Date: September 14th 2022
-*   Class: CS115 _ University of Regina
-*   Purpose: Provide definitions and implementations of World Functions
-*/
+// Name: Owen Monus
+// Student Number: 200482797
+// Date: Sept 26, 2022
 
-
-
-#include <iostream>
 #include <string>
+#include <iostream>
 #include <fstream>
-#include "World.h"
+
 using namespace std;
 
-string descriptions[DESCRIPTION_COUNT];
+#include "World.h"
 
-//Sets each node to INACCESSIBLE
-void worldClear(World world){
-    for(int i = 0; i < ROW_COUNT; i++){
-        for(int j = 0; j < COLUMN_COUNT; j++){
-            world[i][j] = INACCESSIBLE;
-        }// end column loop
-    }//end row loop
-}
+//an array of length DESCRIPTION_COUNT that contains the world text descriptions
+string descriptions[DESCRIPTION_COUNT]; 
 
+void worldClear (World world) {
+    for (int r = 0; r < ROW_COUNT; r++) {
+        for (int c = 0; c < COLUMN_COUNT; c++) {
+            world[r][c] = INACCESSIBLE;
+        } //end column for
+    } //end row for
+} //end worldClear
 
-void worldLoadAll(World world, string game_name){
-    string data_file_name = game_name + "_grid.txt";
-    string text_data_file = game_name + "_text.txt";
+void worldLoadAll (World world, string game_name) {
+    string nodeDataFile = game_name + "_grid.txt";
+    string textDataFile = game_name + "_text.txt";
 
-    worldLoadDescriptions(world, text_data_file);
-    worldLoadNodes(world, data_file_name);
-}
+    worldLoadNodes(world, nodeDataFile);
+    worldLoadDescriptions(world, textDataFile);
+} //end worldLoadAll
 
-
-//Load nodes from file.
-void worldLoadNodes(World world, string filename){
+void worldLoadNodes (World world, string filename) {
     ifstream fin;
-    fin.open(filename.c_str());
 
-    if(!fin){
-        cout << "ERROR Opening file.\n";
-    }
-
-    for(int i = 0; i < ROW_COUNT; i++){
-        for(int j = 0; j < COLUMN_COUNT; j++){
-            fin >> world[i][j];
-        }
-    }
+    fin.open(filename);
+    
+    for (int r = 0; r < ROW_COUNT; r++) {
+        for (int c = 0; c < COLUMN_COUNT; c++) {
+            fin >> world[r][c];
+        } //end column for
+    } //end row for
 
     fin.close();
-}
+} //end worldLoadNodes
 
-void worldDebugPrint(const World world){
-    for(int i = 0; i < ROW_COUNT; i++){
-        for(int j = 0; j < COLUMN_COUNT; j++){
-            cout << world[i][j] << "\t";
-        }// end column loop
-        cout << endl;
-    }//end row loop
-}
+void worldDebugPrint (const World world) {
+    for (int r = 0; r < ROW_COUNT; r++) {
+        for (int c = 0; c < COLUMN_COUNT; c++) {
+            cout << world[r][c] << '\t';
+        } //end column for
+        cout << endl; 
+    } //end row for
+} //end worldDebugPrint
 
-//return true if the world location is valid (has a non-negative row and column that are less than their count constants)
-bool worldIsValid(const World world, int row, int column){
-    
-    if(row >= 0 && row < ROW_COUNT)
-        if(column >= 0 && column < COLUMN_COUNT)
-            return true;
-    
-    
-    return false;
-}
+bool worldIsValid (const World world, int row, int column) {
+    if((row >= 0 && row < ROW_COUNT) && (column >= 0 && column < COLUMN_COUNT)) {
+        return true;
+    }
+    else
+        return false;
+} // end worldIsValid
 
+bool worldCanGoNorth (const World world, int row, int column) {
+    if(( row != 0 ) && ( world[row -1][column] != INACCESSIBLE)) {
+        return true;
+    }
+    else
+        return false;
+} //end worldCanGoNorth
 
-//The next four functions work the same. The only difference is the direction we check.
-//This is indicated by number changes to the checkRow and checkColumn
+bool worldCanGoSouth (const World world, int row, int column) {
+    if(( row != ( ROW_COUNT -1 ) ) && ( world[row + 1][column] != INACCESSIBLE)) {
+        return true;
+    }
+    else
+        return false;
+} //end worldCanGoSouth
 
-bool worldCanGoNorth(const World world, int row, int column){
-    int checkRow = row - 1;
-    int checkColumn = column;
+bool worldCanGoEast (const World world, int row, int column) {
+    if(( column != ( COLUMN_COUNT -1 ) ) && ( world[row][column +1] != INACCESSIBLE)) {
+        return true;
+    }
+    else
+        return false;
+} //end worldCanGoEast
 
+bool worldCanGoWest (const World world, int row, int column) {
+    if(( column != 0 ) && ( world[row][column -1] != INACCESSIBLE)) {
+        return true;
+    }
+    else
+        return false;
+} //end worldCanGoWest
 
-    //we check in this order to first ensure we are not breaking the bounds of the array
-    //then we access the array to see if it's inaccessible. If you do these checks the other way
-    //or at the same time you could have a out of bounds exception.
-    if(worldIsValid(world, checkRow, checkColumn))
-        if(world[checkRow][checkColumn] != INACCESSIBLE)
-            return true;
+bool worldIsDeath (const World world, int row, int column) {
+    if(world[row][column] == DEATH_NODE) {
+        return true;
+    }
+    else
+        return false;
+} //end worldIsDeath
 
+bool worldIsVictory (const World world, int row, int column) {
+    if(world[row][column] == VICTORY_NODE) {
+        return true;
+    }
+    else
+        return false;
+} //end worldIsVictory
 
-    return false;
-}
-bool worldCanGoSouth(const World world, int row, int column){
-    int checkRow = row + 1;
-    int checkColumn = column;
-
-
-    //we check in this order to first ensure we are not breaking the bounds of the array
-    //then we access the array to see if it's inaccessible. If you do these checks the other way
-    //or at the same time you could have a out of bounds exception.
-    if(worldIsValid(world, checkRow, checkColumn))
-        if(world[checkRow][checkColumn] != INACCESSIBLE)
-            return true;
-
-
-    return false;
-}
-bool worldCanGoEast(const World world, int row, int column){
-    int checkRow = row;
-    int checkColumn = column + 1;
-
-
-    //we check in this order to first ensure we are not breaking the bounds of the array
-    //then we access the array to see if it's inaccessible. If you do these checks the other way
-    //or at the same time you could have a out of bounds exception.
-    if(worldIsValid(world, checkRow, checkColumn))
-        if(world[checkRow][checkColumn] != INACCESSIBLE)
-            return true;
-
-
-    return false;
-}
-bool worldCanGoWest(const World world, int row, int column){
-    int checkRow = row;
-    int checkColumn = column - 1;
-
-
-    //we check in this order to first ensure we are not breaking the bounds of the array
-    //then we access the array to see if it's inaccessible. If you do these checks the other way
-    //or at the same time you could have a out of bounds exception.
-    if(worldIsValid(world, checkRow, checkColumn))
-        if(world[checkRow][checkColumn] != INACCESSIBLE)
-            return true;
-
-
-    return false;
-}
-
-//return true if the indicated node is a death node
-bool worldIsDeath(const World world, int row, int column){
-    return (world[row][column] == DEATH_NODE);
-}
-
-//return true if the indicated node is a victory node
-bool worldIsVictory(const World world, int row, int column){
-    return (world[row][column] == VICTORY_NODE);
-}
-
-
-
-void worldFindValue(const World world, int& result_row, int& result_column, NodeValue value_to_find){
+void worldFindValue (const World world, int& result_row, int& result_column, NodeValue value_to_find) {
     result_row = -1;
     result_column = -1;
+    
+    for (int r = 0; r < ROW_COUNT; r++) {
+        for (int c = 0; c < COLUMN_COUNT; c++) {
+            if (world[r][c] == value_to_find) {
+                result_row = r;
+                result_column = c;
+            } //end if
+        } //end column for
+    } //end row for
+} //end worldFindValue
 
-    for(int i = 0; i < ROW_COUNT; i++){
-        for(int j = 0; j < COLUMN_COUNT; j++){
-            if(world[i][j] == value_to_find){
-                result_row = i;
-                result_column = j;
-            }
-        }// end column loop
-    }//end row loop
-}
+void worldLoadDescriptions (World world, string filename) {
+    fstream fin;
+    string tempString; // string to hold the values fstream reads in
 
-bool stringHasContent(string toCheck){
-    if(toCheck.empty()){
-        return false;
-    }
+    fin.open(filename);
+    getline(fin, tempString, '\n'); 
+    getline(fin, tempString, '\n');
 
-    for(int i = 0; i < toCheck.length(); i++){
-        if(toCheck.at(i) != ' ' || toCheck.at(i) != '\n'){
-            return true;
-        }
-    }
-    return false;
-}
+    //Adds a chunk of text from filename into a string at i in descriptions
+    for (int i = 0; i < DESCRIPTION_COUNT; i++) {
+        /* the value of tempString doesnt matter, as long as it isnt "" – the following getline 
+        call changes it's value */
+        tempString = " "; 
+        while (tempString != "") {
+            getline(fin, tempString, '\n');            
+            descriptions[i] = descriptions[i] + tempString + "\n";
+        } //end while
 
-void worldLoadDescriptions (World world, string filename){ 
-    ifstream fin;
-    fin.open(filename.c_str());
+        //remove the excess \n from the end of the string
+        descriptions[i] = descriptions[i].substr(0, (descriptions[i].length() - 1)); 
 
-    string inText;
-    string toStore = "";
-    getline(fin, inText);
-    descriptions[0] = inText;
-    getline(fin, inText);
+    } //end for
+} //end worldLoadDescriptions
 
-    for(int i = 0; i < DESCRIPTION_COUNT;){
-        getline(fin, inText);        
+void worldPrintDescription (const World world, int row, int column) {
+    unsigned int descriptionIndex = world[row][column];
+    cout << descriptions[descriptionIndex];
+} //end worldPrintDescription
 
-        // cout << "inText is: " << int(inText.at(0));
-        if(stringHasContent(inText)){
-            toStore += inText + '\n';
-        }
-        else{
-            descriptions[i] = toStore;
-            i++;
-            toStore = "";
-        }
-    }
-
-    // This code was for debugging
-    // for(int i = 0; i < DESCRIPTION_COUNT; i++){
-    //     cout << i << ": " << descriptions[i] << endl;
-    // }
-
-
-}
-
-void worldPrintDescription (const World world, int row, int column){
-    cout << descriptions[world[row][column]];
-}
-
-
-void worldPrintStartMessage (const World world){
+void worldPrintStartMessage (const World world) {
     cout << descriptions[START_MESSAGE];
-}
+} //end worldPrintStrartMessage
 
-
-void worldPrintEndMessage (const World world){
+void worldPrintEndMessage (const World world) {
     cout << descriptions[END_MESSAGE];
-}
-
+} //end worldPrintStartMessage
