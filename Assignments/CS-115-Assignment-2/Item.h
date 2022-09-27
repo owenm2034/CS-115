@@ -34,7 +34,10 @@ struct Item {
 //    <5> points1: represents the amount of points this item is worth
 //    <6> world_description1: description of the item when its in the world
 //    <7> inventory_description1: description of the item when its in the players inventory
-//  Precondition(s): N/A
+//  Precondition(s):
+//    <1>  the item id (id1) parameter is not ID_NOT_INITIALIZED
+//    <2>  the world description (world_description) is not a blank string ("")
+//    <3>  the inventory description (inventory_description) is not a blank string ("")
 //  Returns: N/A
 //  Side Effect: N/A
 //  Postcondition(s):
@@ -79,7 +82,7 @@ char itemGetId (const Item& item);
 //
 //  Purpose: return a boolean that tells if the item is in a players inventory
 //  Parameter(s):
-//    <1> item: item check if its in an inventory
+//    <1> item: item to check if its in an inventory
 //  Precondition(s):
 //    <1> item has been initialized
 //  Returns: A boolean:
@@ -114,7 +117,7 @@ bool itemIsAtLocation (const Item& item,
 //
 //  itemGetPlayerPoints
 //
-//  Purpose: Returns how many points the player current has from the item.
+//  Purpose: Returns how many points the player currently has from a given item.
 //           If the item is not in the player's inventory, the function should return 0.
 //  Parameter(s):
 //    <1> item: item to retrieve point value from

@@ -1,0 +1,31 @@
+# Testcase 1D
+# -----------
+# Solution
+n
+
+# about to enter blizzard
+n
+n
+n
+e
+
+# about to leave blizzard
+e
+e
+e
+s
+w
+
+# about to cross river
+s
+s
+e
+s
+s
+e
+e
+n
+n
+
+# about to reach victory node
+e
