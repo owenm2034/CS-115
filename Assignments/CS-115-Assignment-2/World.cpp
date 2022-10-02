@@ -13,7 +13,8 @@ using namespace std;
 //an array of length DESCRIPTION_COUNT that contains the world text descriptions
 string descriptions[DESCRIPTION_COUNT]; 
 
-void worldClear (World world) {
+void worldClear (World world) 
+{
     for (int r = 0; r < ROW_COUNT; r++) {
         for (int c = 0; c < COLUMN_COUNT; c++) {
             world[r][c] = INACCESSIBLE;
@@ -21,15 +22,17 @@ void worldClear (World world) {
     } //end row for
 } //end worldClear
 
-void worldLoadAll (World world, string game_name) {
+void worldLoadAll (World world, string game_name) 
+{
     string nodeDataFile = game_name + "_grid.txt";
     string textDataFile = game_name + "_text.txt";
-
+    
     worldLoadNodes(world, nodeDataFile);
     worldLoadDescriptions(world, textDataFile);
 } //end worldLoadAll
 
-void worldLoadNodes (World world, string filename) {
+void worldLoadNodes (World world, string filename) 
+{
     ifstream fin;
 
     fin.open(filename);
@@ -43,16 +46,19 @@ void worldLoadNodes (World world, string filename) {
     fin.close();
 } //end worldLoadNodes
 
-void worldDebugPrint (const World world) {
+void worldDebugPrint (const World world) 
+{
     for (int r = 0; r < ROW_COUNT; r++) {
         for (int c = 0; c < COLUMN_COUNT; c++) {
             cout << world[r][c] << '\t';
         } //end column for
         cout << endl; 
     } //end row for
+    cout << descriptions[1];
 } //end worldDebugPrint
 
-bool worldIsValid (const World world, int row, int column) {
+bool worldIsValid (const World world, int row, int column) 
+{
     if((row >= 0 && row < ROW_COUNT) && (column >= 0 && column < COLUMN_COUNT)) {
         return true;
     }
@@ -60,7 +66,8 @@ bool worldIsValid (const World world, int row, int column) {
         return false;
 } // end worldIsValid
 
-bool worldCanGoNorth (const World world, int row, int column) {
+bool worldCanGoNorth (const World world, int row, int column) 
+{
     if(( row != 0 ) && ( world[row -1][column] != INACCESSIBLE)) {
         return true;
     }
@@ -68,7 +75,8 @@ bool worldCanGoNorth (const World world, int row, int column) {
         return false;
 } //end worldCanGoNorth
 
-bool worldCanGoSouth (const World world, int row, int column) {
+bool worldCanGoSouth (const World world, int row, int column) 
+{
     if(( row != ( ROW_COUNT -1 ) ) && ( world[row + 1][column] != INACCESSIBLE)) {
         return true;
     }
@@ -76,7 +84,8 @@ bool worldCanGoSouth (const World world, int row, int column) {
         return false;
 } //end worldCanGoSouth
 
-bool worldCanGoEast (const World world, int row, int column) {
+bool worldCanGoEast (const World world, int row, int column) 
+{
     if(( column != ( COLUMN_COUNT -1 ) ) && ( world[row][column +1] != INACCESSIBLE)) {
         return true;
     }
@@ -84,7 +93,8 @@ bool worldCanGoEast (const World world, int row, int column) {
         return false;
 } //end worldCanGoEast
 
-bool worldCanGoWest (const World world, int row, int column) {
+bool worldCanGoWest (const World world, int row, int column) 
+{
     if(( column != 0 ) && ( world[row][column -1] != INACCESSIBLE)) {
         return true;
     }
@@ -100,7 +110,8 @@ bool worldIsDeath (const World world, int row, int column) {
         return false;
 } //end worldIsDeath
 
-bool worldIsVictory (const World world, int row, int column) {
+bool worldIsVictory (const World world, int row, int column) 
+{
     if(world[row][column] == VICTORY_NODE) {
         return true;
     }
@@ -108,7 +119,8 @@ bool worldIsVictory (const World world, int row, int column) {
         return false;
 } //end worldIsVictory
 
-void worldFindValue (const World world, int& result_row, int& result_column, NodeValue value_to_find) {
+void worldFindValue (const World world, int& result_row, int& result_column, NodeValue value_to_find) 
+{
     result_row = -1;
     result_column = -1;
     
@@ -122,7 +134,24 @@ void worldFindValue (const World world, int& result_row, int& result_column, Nod
     } //end row for
 } //end worldFindValue
 
-void worldLoadDescriptions (World world, string filename) {
+// Phil's helper function -> it checks if a string has content
+bool stringHasContent(string toCheck)
+{
+    if(toCheck.empty()){
+        return false;
+    }
+
+    for(int i = 0; i < toCheck.length(); i++){
+        if(toCheck.at(i) != ' ' || toCheck.at(i) != '\n' || toCheck.at(i) != '\0'){
+            return true;
+        }
+    }
+    return false;
+
+}
+
+void worldLoadDescriptions (World world, string filename) 
+{
     fstream fin;
     string tempString; // string to hold the values fstream reads in
 
@@ -134,8 +163,8 @@ void worldLoadDescriptions (World world, string filename) {
     for (int i = 0; i < DESCRIPTION_COUNT; i++) {
         /* the value of tempString doesnt matter, as long as it isnt "" – the following getline 
         call changes it's value */
-        tempString = " "; 
-        while (tempString != "") {
+        tempString = "someValue"; 
+        while (stringHasContent(tempString)) {
             getline(fin, tempString, '\n');            
             descriptions[i] = descriptions[i] + tempString + "\n";
         } //end while
@@ -146,15 +175,18 @@ void worldLoadDescriptions (World world, string filename) {
     } //end for
 } //end worldLoadDescriptions
 
-void worldPrintDescription (const World world, int row, int column) {
+void worldPrintDescription (const World world, int row, int column) 
+{
     unsigned int descriptionIndex = world[row][column];
     cout << descriptions[descriptionIndex];
 } //end worldPrintDescription
 
-void worldPrintStartMessage (const World world) {
+void worldPrintStartMessage (const World world) 
+{
     cout << descriptions[START_MESSAGE];
 } //end worldPrintStrartMessage
 
-void worldPrintEndMessage (const World world) {
+void worldPrintEndMessage (const World world) 
+{
     cout << descriptions[END_MESSAGE];
 } //end worldPrintStartMessage

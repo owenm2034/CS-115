@@ -75,7 +75,6 @@ void worldLoadNodes (World world, string filename);
 //  Purpose: Prints out all node values in the world in a grid seperated by tabs
 //  Parameter(s):
 //    <1> world: The world to debug
-//    <2> filename: A string with the games chosen name
 //  Precondition(s): N/A
 //  Returns: N/A
 //  Side Effect: N/A

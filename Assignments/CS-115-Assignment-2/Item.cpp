@@ -1,21 +1,23 @@
 //Author: Owen Monus
 //Student ID: 200482797   
-//Date: September 21st 2022
+//Date: September 29th 2022
 //Class: CS115 _ University of Regina
 //Purpose: Provide function declarations for Item
 
 
 #include <cassert>
 #include <iostream>
+#include "Item.h"
 using namespace std;
 
-#include "Item.h"
+
 
 void itemInit (Item& item, char id1, 
                int row1, int column1, 
                int points1,
                const string& world_description1,
-               const string& inventory_description1) {
+               const string& inventory_description1) 
+{
     assert(id1 != ID_NOT_INITIALIZED);
     assert(world_description1 != "");
     assert(inventory_description1 != "");
@@ -31,7 +33,8 @@ void itemInit (Item& item, char id1,
     item.itemInventoryDescription = inventory_description1;
 }
 
-void itemDebugPrint (const Item& item) {
+void itemDebugPrint (const Item& item) 
+{
     cout << "id:" << '\t' << '\''<< item.itemId << '\'' << endl;
     cout << "start_row:" << '\t' << item.startingRow << endl;
     cout << "start_column:" << '\t' << item.startingCol << endl;
@@ -43,15 +46,18 @@ void itemDebugPrint (const Item& item) {
     cout << "inventory_description:" << '\t' << '\"'<< item.itemInventoryDescription << '\"' << endl;
 }
 
-char itemGetId (const Item& item) {
+char itemGetId (const Item& item) 
+{
     return item.itemId;
 }
 
-bool itemIsInInventory (const Item& item) {
+bool itemIsInInventory (const Item& item) 
+{
     return item.inPlayerInventory;
 }
 
-bool itemIsAtLocation (const Item& item, int row, int column) {
+bool itemIsAtLocation (const Item& item, int row, int column) 
+{
     if (item.inPlayerInventory) {
         return false;
     }
@@ -61,14 +67,16 @@ bool itemIsAtLocation (const Item& item, int row, int column) {
     return false;
 }
 
-int itemGetPlayerPoints (const Item& item) {
+int itemGetPlayerPoints (const Item& item) 
+{
     if (item.inPlayerInventory) {
         return item.points;
     }
     return 0;
 }
 
-void itemPrintDescription (const Item& item) {
+void itemPrintDescription (const Item& item) 
+{
     if (item.inPlayerInventory) {
         cout << item.itemInventoryDescription << endl;
     }
@@ -76,17 +84,20 @@ void itemPrintDescription (const Item& item) {
         cout << item.itemWorldDescription << endl;
 }
 
-void itemReset (Item& item) {
+void itemReset (Item& item) 
+{
     item.currentRow = item.startingRow;
     item.currentCol = item.startingCol;
     item.inPlayerInventory = false;
 }
 
-void itemMoveToInventory (Item& item) {
+void itemMoveToInventory (Item& item) 
+{
     item.inPlayerInventory = true;
 }
 
-void itemMoveToLocation (Item& item, int row, int column) {
+void itemMoveToLocation (Item& item, int row, int column) 
+{
     item.currentRow = row;
     item.currentCol = column;
     item.inPlayerInventory = false;

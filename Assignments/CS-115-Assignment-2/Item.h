@@ -1,6 +1,6 @@
 //Author: Owen Monus
 //Student ID: 200482797   
-//Date: September 21st 2022
+//Date: September 29th 2022
 //Class: CS115 _ University of Regina
 //Purpose: Provide prototypes and constant declarations for Item
 
@@ -39,7 +39,9 @@ struct Item {
 //    <2>  the world description (world_description) is not a blank string ("")
 //    <3>  the inventory description (inventory_description) is not a blank string ("")
 //  Returns: N/A
-//  Side Effect: N/A
+//  Side Effect: 
+//    <1> the items currentRow value is initialized as startingRow
+//    <2> the items currentCol value is initialized as startingCol
 //  Postcondition(s):
 //    <1> The given item will be initialized with the provided data
 //
@@ -122,7 +124,7 @@ bool itemIsAtLocation (const Item& item,
 //  Parameter(s):
 //    <1> item: item to retrieve point value from
 //  Precondition(s): 
-//    <1> item has been initialized
+//    <1> item has been initialized with a point value
 //  Returns: An int containing the point value of item
 //  Side Effect: N/A
 //  Postcondition(s):
@@ -142,7 +144,7 @@ int itemGetPlayerPoints (const Item& item);
 //  Returns: N/A
 //  Side Effect: N/A
 //  Postcondition(s):
-//    <1>  The item's description is printed based on its state
+//    <1>  The item's description is printed based on its state (in world or in inventory)
 //
 void itemPrintDescription (const Item& item);
 
