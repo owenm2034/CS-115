@@ -285,6 +285,9 @@ void handlePlayerInput(const string &userInput, bool &worldIsValid, World &world
                 if (toQuit[0] == 'y') {
                     worldIsValid = false;
                 } //end if
+                else if (toQuit[0] == 'n') {
+                    break;
+                }
                 break;
             } // end q case
             case 'n': { //if the player wants to move north
