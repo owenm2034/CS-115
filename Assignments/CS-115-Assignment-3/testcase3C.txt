@@ -1,0 +1,111 @@
+# Testcase 3C
+# -----------
+# Test taking all Ghostwood items
+
+# get moth (m)
+n
+e
+e
+e
+n
+n
+w
+t
+m
+i
+
+# get ring (r)
+e
+s
+s
+e
+s
+s
+w
+t
+r
+i
+
+# get dagger (d)
+e
+n
+n
+w
+w
+w
+w
+w
+w
+s
+w
+t
+d
+i
+
+# get key (k)
+e
+n
+n
+w
+n
+n
+n
+n
+t
+k
+
+# get candlestick (c)
+s
+s
+e
+e
+n
+n
+n
+w
+t
+c
+
+# get scarab beetle (s)
+e
+e
+n
+t
+s
+
+# get tarantula (t)
+s
+w
+s
+s
+s
+e
+e
+n
+t
+b
+e
+n
+e
+e
+e
+e
+t
+t
+
+# get pendant (p)
+w
+s
+s
+e
+s
+s
+s
+t
+p
+i
+
+# should have printed 9 items
+# should score 19 points
+q
+y

@@ -1,0 +1,17 @@
+# Testcase 3B
+# -----------
+# Test taking a Ghostwood item
+n
+e
+e
+e
+n
+n
+w
+t
+m
+i
+# should have printed moth
+
+# die
+n

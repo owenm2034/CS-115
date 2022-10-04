@@ -1,0 +1,5 @@
+# Testcase 3A
+# -----------
+# Test loading Ghostwood world
+# reach victory node immediately
+s
