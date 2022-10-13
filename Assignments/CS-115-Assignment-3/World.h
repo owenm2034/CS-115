@@ -4,37 +4,60 @@
 
 #pragma once
 #include <string>
-
+#include "Location.h"
+#include <cassert>
+ 
 using namespace std;
 
-int const ROW_COUNT = 6; // 2D array row size
-int const COLUMN_COUNT = 9; // 2D array column size
-unsigned int const DESCRIPTION_COUNT = 26;
+int const ROW_COUNT = 10; // 2D array row size
+int const COLUMN_COUNT = 10; // 2D array column size
+unsigned int const MAX_DESCRIPTION_COUNT = 1000;
+Location const NO_SUCH_VALUE = Location(-1, -1);
 
 typedef unsigned int NodeValue;
-typedef NodeValue World[ROW_COUNT][COLUMN_COUNT]; 
 
 const NodeValue INACCESSIBLE = 0; 
 const NodeValue START_MESSAGE = 1; 
 const NodeValue END_MESSAGE = 2;
 const NodeValue DEATH_NODE = 3;
 const NodeValue START_NODE = 4;
-const NodeValue VICTORY_NODE = 5; 
+const NodeValue VICTORY_NODE = 5;
+
+
+class World {
+    private:
+        unsigned int description_count;
+        string descriptions[MAX_DESCRIPTION_COUNT];
+        NodeValue nodes[ROW_COUNT][COLUMN_COUNT];
+
+        void loadNodes(string filename);
+        void loadDescriptions(string filename);
+        bool isInvariantTrue () const;
+    public:
+        World(const string& game_name);
+        void debugPrint() const;
+        bool isValid (const Location& location) const;
+        bool isDeath (const Location& location) const;
+        bool isVictory (const Location& location) const;
+        bool canGoNorth (const Location& location) const;
+        bool canGoSouth (const Location& location) const;
+        bool canGoEast (const Location& location) const;
+        bool canGoWest (const Location& location) const;
+        Location getNorth (const Location& location) const;
+        Location getSouth (const Location& location) const;
+        Location getEast (const Location& location) const;
+        Location getWest (const Location& location) const;
+        Location getStart () const;
+        void printStartMessage () const;
+        void printEndMessage () const;
+        void printDescription (const Location& location) const;
+
+        // Location worldLocation();
+};
+
+
 
 /****************************FUNCTION PROTOTYPES*****************************/
-//
-//  worldClear
-//
-//  Purpose: Sets every element in World to INACCESSIBLE
-//  Parameter(s):
-//    <1> world: The world to clear
-//  Precondition(s): N/A
-//  Returns: N/A
-//  Side Effect: N/A
-//  Postcondition(s):
-//    <1> Every element in world becomes INACCESSIBLE
-//
-void worldClear (World world);
 
 //
 //  worldLoadAll
