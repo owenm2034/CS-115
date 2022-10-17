@@ -6,20 +6,43 @@
 
 #pragma once
 #include <string>
+#include "Location.h"
 using namespace std;
 
 const char ID_NOT_INITIALIZED = '\0';
 
+class Item
+{
+    private:
+        char itemId;
+        Location startingRow;
+        Location currentLocation;
+        bool inPlayerInventory;
+        int points;
+        string itemWorldDescription;
+        string itemInventoryDescription;
+    public:
+        Item (); // new in A3
+        Item (char id1,
+           const Location& location,
+           int points1,
+           const string& world_description1,
+           const string& inventory_description1);
+        void debugPrint () const;
+        bool isInitialized () const; // new in A3
+        char getId () const;
+        bool isInInventory () const;
+        bool isAtLocation (const Location& location) const;
+        int getPlayerPoints () const;
+        void printDescription () const;
+        bool operator< (const Item& other) const; // new in A3
+        void reset ();
+        void moveToInventory ();
+        void moveToLocation (const Location& location);
+};
+
 struct Item { 
-    char itemId;
-    int startingRow;
-    int startingCol;
-    int currentRow;
-    int currentCol;
-    bool inPlayerInventory;
-    int points;
-    string itemWorldDescription;
-    string itemInventoryDescription;
+    
 };
 
 //

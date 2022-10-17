@@ -10,8 +10,6 @@
 #include "Item.h"
 using namespace std;
 
-
-
 void itemInit (Item& item, char id1, 
                int row1, int column1, 
                int points1,
