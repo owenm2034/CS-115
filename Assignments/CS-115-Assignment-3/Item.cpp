@@ -10,11 +10,42 @@
 #include "Item.h"
 using namespace std;
 
-void itemInit (Item& item, char id1, 
-               int row1, int column1, 
-               int points1,
-               const string& world_description1,
-               const string& inventory_description1) 
+// void itemInit (Item& item, char id1, 
+//                int row1, int column1, 
+//                int points1,
+//                const string& world_description1,
+//                const string& inventory_description1) 
+// {
+//     assert(id1 != ID_NOT_INITIALIZED);
+//     assert(world_description1 != "");
+//     assert(inventory_description1 != "");
+    
+//     item.itemId = id1;
+//     item.startingRow = row1;
+//     item.startingCol = column1;
+//     item.currentRow = item.startingRow;
+//     item.currentCol = item.startingCol;
+//     item.inPlayerInventory = false;
+//     item.points = points1;
+//     item.itemWorldDescription = world_description1;
+//     item.itemInventoryDescription = inventory_description1;
+// }
+
+Item::Item()
+    :id(ID_NOT_INITIALIZED),
+    start_location(Location()),
+    current_location(Location()),
+    in_player_inventory(false),
+    points(0),
+    world_description("[Item not initialized]"),
+    inventory_description("[Item not initialized]")
+{};
+
+Item::Item (char id1,
+           const Location& location,
+           int points1,
+           const string& world_description1,
+           const string& inventory_description1) 
 {
     assert(id1 != ID_NOT_INITIALIZED);
     assert(world_description1 != "");
