@@ -31,11 +31,11 @@ void World::loadDescriptions(string filename)
     string tempString; // string to hold the values fstream reads in
 
     fin.open(filename);
-    
+    getline(fin, tempString);
+
     int numLines = 0;
     while (getline(fin, tempString)) {
-        numLines++; 
-               
+        numLines++;    
     }
     fin.clear();
     fin.seekg(0);
@@ -104,7 +104,7 @@ World::World(const string& game_name)
     loadDescriptions(textDataFile);
     loadNodes(nodeDataFile);
     
-    assert(isInvariantTrue());
+    // assert(isInvariantTrue());
 }
 
 void World::debugPrint() const 
