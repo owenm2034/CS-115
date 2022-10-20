@@ -14,13 +14,14 @@ const char ID_NOT_INITIALIZED = '\0';
 class Item
 {
     private:
-        char itemId;
-        Location startingRow;
-        Location currentLocation;
-        bool inPlayerInventory;
+        char id;
+        Location start_location;
+        Location current_location;
+        bool in_player_inventory;
         int points;
-        string itemWorldDescription;
-        string itemInventoryDescription;
+        string world_description;
+        string inventory_description;
+        bool isInvariantTrue() const;
     public:
         Item (); // new in A3
         Item (char id1,
@@ -39,10 +40,6 @@ class Item
         void reset ();
         void moveToInventory ();
         void moveToLocation (const Location& location);
-};
-
-struct Item { 
-    
 };
 
 //

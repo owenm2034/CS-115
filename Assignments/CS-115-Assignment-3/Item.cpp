@@ -10,26 +10,15 @@
 #include "Item.h"
 using namespace std;
 
-// void itemInit (Item& item, char id1, 
-//                int row1, int column1, 
-//                int points1,
-//                const string& world_description1,
-//                const string& inventory_description1) 
-// {
-//     assert(id1 != ID_NOT_INITIALIZED);
-//     assert(world_description1 != "");
-//     assert(inventory_description1 != "");
-    
-//     item.itemId = id1;
-//     item.startingRow = row1;
-//     item.startingCol = column1;
-//     item.currentRow = item.startingRow;
-//     item.currentCol = item.startingCol;
-//     item.inPlayerInventory = false;
-//     item.points = points1;
-//     item.itemWorldDescription = world_description1;
-//     item.itemInventoryDescription = inventory_description1;
-// }
+bool Item::isInvariantTrue() const
+{
+    if(world_description == "" || inventory_description == "") 
+    {
+        cout << "one of world_description or inventory_description contain a blank string" << endl;
+        return false;
+    }
+    return true;
+}
 
 Item::Item()
     :id(ID_NOT_INITIALIZED),
@@ -39,95 +28,106 @@ Item::Item()
     points(0),
     world_description("[Item not initialized]"),
     inventory_description("[Item not initialized]")
-{};
+{}
 
 Item::Item (char id1,
            const Location& location,
            int points1,
            const string& world_description1,
            const string& inventory_description1) 
-{
-    assert(id1 != ID_NOT_INITIALIZED);
-    assert(world_description1 != "");
-    assert(inventory_description1 != "");
-    
-    item.itemId = id1;
-    item.startingRow = row1;
-    item.startingCol = column1;
-    item.currentRow = item.startingRow;
-    item.currentCol = item.startingCol;
-    item.inPlayerInventory = false;
-    item.points = points1;
-    item.itemWorldDescription = world_description1;
-    item.itemInventoryDescription = inventory_description1;
+    : id (id1),
+    start_location (location),
+    current_location (location),
+    in_player_inventory (false),
+    points (points1),
+    world_description (world_description1),
+    inventory_description (inventory_description1)
+{ 
+    assert(isInvariantTrue());
 }
 
-void itemDebugPrint (const Item& item) 
+void Item::debugPrint() const 
 {
-    cout << "id:" << '\t' << '\''<< item.itemId << '\'' << endl;
-    cout << "start_row:" << '\t' << item.startingRow << endl;
-    cout << "start_column:" << '\t' << item.startingCol << endl;
-    cout << "current_row:" << '\t' << item.currentRow << endl;
-    cout << "current_column:" << '\t' << item.currentCol << endl;
-    cout << "is_in_inventory:" << '\t' << item.inPlayerInventory << endl;
-    cout << "points:" << '\t' << item.points << endl;
-    cout << "world_description:" << '\t' << '\"'<< item.itemWorldDescription << '\"' << endl;
-    cout << "inventory_description:" << '\t' << '\"'<< item.itemInventoryDescription << '\"' << endl;
+    cout << "id:" << '\t' << '\''<< id << '\'' << endl;
+    cout << "start_location:" << '\t' << start_location << endl;
+    cout << "current_location:" << '\t' << current_location << endl;
+    cout << "is_in_inventory:" << '\t' << in_player_inventory << endl;
+    cout << "points:" << '\t' << points << endl;
+    cout << "world_description:" << '\t' << '\"'<< world_description << '\"' << endl;
+    cout << "inventory_description:" << '\t' << '\"'<< inventory_description << '\"' << endl;
 }
 
-char itemGetId (const Item& item) 
+bool Item::isInitialized() const 
 {
-    return item.itemId;
+    assert(isInvariantTrue());
+    return (id != ID_NOT_INITIALIZED);
+} 
+
+char Item::getId () const 
+{
+    assert(isInvariantTrue());
+    return id;
 }
 
-bool itemIsInInventory (const Item& item) 
+bool Item::isInInventory () const 
 {
-    return item.inPlayerInventory;
+    assert(isInvariantTrue());
+    return in_player_inventory;
 }
 
-bool itemIsAtLocation (const Item& item, int row, int column) 
+bool Item::isAtLocation (const Location& location) const
 {
-    if (item.inPlayerInventory) {
-        return false;
-    }
-    else if (item.currentRow == row && item.currentCol == column) {
-        return true;
-    }
-    return false;
+    assert(isInvariantTrue());
+    return (location == current_location);
 }
 
-int itemGetPlayerPoints (const Item& item) 
+int Item::getPlayerPoints () const
 {
-    if (item.inPlayerInventory) {
-        return item.points;
+    assert(isInvariantTrue());
+    if(in_player_inventory) {
+        return points;
     }
     return 0;
 }
 
-void itemPrintDescription (const Item& item) 
+void Item::printDescription () const
 {
-    if (item.inPlayerInventory) {
-        cout << item.itemInventoryDescription << endl;
+    assert(isInvariantTrue());
+    if (in_player_inventory) 
+    {
+        cout << inventory_description << endl;
     }
     else
-        cout << item.itemWorldDescription << endl;
+    {
+       cout << world_description << endl;
+    }
 }
 
-void itemReset (Item& item) 
+bool Item::operator< (const Item& other) const
 {
-    item.currentRow = item.startingRow;
-    item.currentCol = item.startingCol;
-    item.inPlayerInventory = false;
+    assert(isInvariantTrue());
+    return (id < other.id);
 }
 
-void itemMoveToInventory (Item& item) 
+void Item::reset () 
 {
-    item.inPlayerInventory = true;
+    assert(isInvariantTrue());
+    current_location = start_location;
+    in_player_inventory = false;
+    assert(isInvariantTrue());
 }
 
-void itemMoveToLocation (Item& item, int row, int column) 
+void Item::moveToInventory ()
 {
-    item.currentRow = row;
-    item.currentCol = column;
-    item.inPlayerInventory = false;
+    assert(isInvariantTrue());
+    in_player_inventory = true;
+    assert(isInvariantTrue());
+}
+
+void Item::moveToLocation (const Location& location) 
+{
+    assert(isInvariantTrue());
+    current_location = location;
+    in_player_inventory = false;
+    assert(isInvariantTrue());
 }
