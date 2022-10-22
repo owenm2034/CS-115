@@ -78,6 +78,10 @@ bool Item::isInInventory () const
 bool Item::isAtLocation (const Location& location) const
 {
     assert(isInvariantTrue());
+    if(isInInventory()) 
+    {
+        return false;
+    }
     return (location == current_location);
 }
 
@@ -127,7 +131,8 @@ void Item::moveToInventory ()
 void Item::moveToLocation (const Location& location) 
 {
     assert(isInvariantTrue());
-    current_location = location;
+    current_location.row = location.row;
+    current_location.column = location.column;
     in_player_inventory = false;
     assert(isInvariantTrue());
 }
