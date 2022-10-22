@@ -1,9 +1,6 @@
 //Author: Owen Monus
 //Student ID: 200482797   
-//Date: September 29th 2022
-//Class: CS115 _ University of Regina
-//Purpose: Provide function declarations for Item
-
+//Date: October 22nd 2022
 
 #include <cassert>
 #include <iostream>
@@ -28,7 +25,7 @@ Item::Item()
     points(0),
     world_description("[Item not initialized]"),
     inventory_description("[Item not initialized]")
-{}
+{isInvariantTrue();}
 
 Item::Item (char id1,
            const Location& location,

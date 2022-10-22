@@ -1,10 +1,7 @@
 // Author: Owen Monus
 // Student ID: 200482797   
-// Date: September 29th 2022
-// Class: CS115 _ University of Regina
+// Date: October 22nd 2022
 
-
-// includes
 #include "Item.h"
 #include "World.h"
 #include "Location.h"
@@ -18,6 +15,7 @@ void handlePlayerInput(const string &userInput, bool &worldIsValid, World &world
 void printPlayerScore(const Item items[], const unsigned int numOfItems);
 
 int main () {
+    // initialize variables
     const unsigned int ITEM_COUNT = 9;
     string userInput;
 
@@ -89,14 +87,17 @@ int main () {
         }
     };
 
+    // initialize world 
+    Location playerLocation = world.getStart();
+    
+    // begin game
     world.printStartMessage();
     cout << '\n';
-
-    Location playerLocation = world.getStart();
     world.printDescription(playerLocation);
     printItemDescription(playerLocation, items, ITEM_COUNT);
     cout << '\n'; 
     
+    // run game
     while(worldIsValid) {
          cout << "Next? ";
          getline(cin, userInput);
@@ -291,7 +292,9 @@ void handlePlayerInput(const string &userInput, bool &worldIsValid, World &world
             } // end default case
     } //end switch
     
-    cout << endl; //prints a new line between Next?'s
+    //prints a new line between Next?'s
+    cout << endl;
+    // ensures the game isnt located at a death or victory node
     checkGameState(world, location, worldIsValid);
 } // end handlePlayerInput
 
@@ -312,7 +315,7 @@ void handlePlayerInput(const string &userInput, bool &worldIsValid, World &world
 void printPlayerScore(const Item items[], const unsigned int numOfItems) {
     int score = 0;
     for (int i = 0; i < numOfItems; i++) {
-        score += items[i].getPlayerPoints();
+        score += items[i].getPlayerPoints(); //tally players score
     } // end for
     cout << "In this game you scored " << score << " points." << endl;
 } // end printPlayerScore`````````
