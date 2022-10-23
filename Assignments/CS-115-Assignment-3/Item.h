@@ -1,8 +1,6 @@
 //Author: Owen Monus
 //Student ID: 200482797   
-//Date: September 29th 2022
-//Class: CS115 _ University of Regina
-//Purpose: Provide prototypes and constant declarations for Item
+//Date: October 22nd 2022
 
 #pragma once
 #include <string>
@@ -21,197 +19,144 @@ class Item
         int points;
         string world_description;
         string inventory_description;
+        
+        /**
+         * @brief Checks if an item is in a valid state. A valid state is when
+         *        world_description is not an empty string and inventory_description 
+         *        is not an empty string
+         * 
+         * @cond world_description is not an empty string
+         * @cond inventory_description is not an empty string
+         * 
+         * @return true 
+         * @return false 
+         */
         bool isInvariantTrue() const;
+    
     public:
+        /**
+         * @brief Construct a new Item object. Sets ID to ID_NOT_INITIALIZED
+         * @pre isInvariantTrue()
+         */
         Item (); // new in A3
+        
+        /**
+         * @brief Construct a new Item object
+         * 
+         * @param id1 item id
+         * @param location starting location of Item
+         * @param points1 points of item
+         * @param world_description1 the in world description of the item
+         * @param inventory_description1 the in inventory description of the item
+         * 
+         * @pre isInvariantTrue()
+         */
         Item (char id1,
            const Location& location,
            int points1,
            const string& world_description1,
            const string& inventory_description1);
+
+        /**
+         * @brief Prints all fields of the item
+         * 
+         */
         void debugPrint () const;
+
+        /**
+         * @brief ensures an item has been initialized
+         * 
+         * @pre isInvariantTrue()
+         * 
+         * @return false if the id field is ID_NOT_INITIALIZED and true otherwise.
+         */
         bool isInitialized () const; // new in A3
+        
+        /**
+         * @brief Get the Id of item
+         * 
+         * @pre isInvariantTrue()
+         * 
+         * @return char id
+         */
         char getId () const;
+        
+        /**
+         * @brief checks if an item is in inventory
+         * 
+         * @pre isInvariantTrue()
+         * 
+         * @return in_player_inventory
+         */
         bool isInInventory () const;
+        
+        /**
+         * @brief checks if an item is at a passed location
+         * 
+         * @param location location to check for item at
+         * 
+         * @pre isInvariantTrue()
+         * 
+         * @return true if the items current_location has the same coordinates 
+         *         as the passed location. 
+         * @return false if in_player_inventory OR items current_location
+         *         is different from the passed location 
+         */
         bool isAtLocation (const Location& location) const;
+        
+        /**
+         * @brief Gets the points value of an item.
+         * 
+         * @pre isInvariantTrue()
+         * 
+         * @return 0 if its not in_player_inventory, and the point value of
+         *         the item if it is in_player_inventory
+         */
         int getPlayerPoints () const;
+        
+        /**
+         * @brief If item is in_player_inventory, it prints inventory_description.
+         *        Otherwise it prints world_description
+         * 
+         * @pre isInvariantTrue()
+         */
         void printDescription () const;
+        
+        /**
+         * @brief The operator will return whether the id for this current Item 
+         *        is strictly less than the id for the other parameter Item
+         * 
+         * @param other item to compare with
+         * 
+         * @pre isInvariantTrue()
+         *
+         * @return true if id < other.getId(). 
+         * @return false if id >=  other.getId()
+         */
         bool operator< (const Item& other) const; // new in A3
+        
+        /**
+         * @brief Resets an items current_location to starting_location. Sets 
+         *        in_player_inventory to false.
+         * @pre isInvariantTrue()
+         * @post isInvariantTrue()
+         */
         void reset ();
+        
+        /**
+         * @brief Change an item's so its in an inventory. (i.e in_player_inventory
+         * is set to true)
+         * 
+         * @pre isInvariantTrue()
+         */
         void moveToInventory ();
+        
+        /**
+         * @brief Moves an item from its current_location to a given one
+         * 
+         * @param location location to move item to
+         * 
+         * @pre isInvariantTrue()
+         */
         void moveToLocation (const Location& location);
 };
-
-//
-//  itemInit
-//
-//  Purpose: initializes an Item.
-//  Parameter(s):
-//    <1> item: the item to initialize
-//    <2> id1: the id to access the item with
-//    <3> row1: the starting row position of the item
-//    <4> column1: the starting column position of the item
-//    <5> points1: represents the amount of points this item is worth
-//    <6> world_description1: description of the item when its in the world
-//    <7> inventory_description1: description of the item when its in the players inventory
-//  Precondition(s):
-//    <1>  the item id (id1) parameter is not ID_NOT_INITIALIZED
-//    <2>  the world description (world_description) is not a blank string ("")
-//    <3>  the inventory description (inventory_description) is not a blank string ("")
-//  Returns: N/A
-//  Side Effect: 
-//    <1> the items currentRow value is initialized as startingRow
-//    <2> the items currentCol value is initialized as startingCol
-//  Postcondition(s):
-//    <1> The given item will be initialized with the provided data
-//
-void itemInit (Item& item, char id1, 
-               int row1, int column1, 
-               int points1,
-               const string& world_description1,
-               const string& inventory_description1);
-
-//
-//  itemDebugPrint
-//
-//  Purpose: Prints all fields of the item
-//  Parameter(s):
-//    <1> item: the item to debug
-//  Precondition(s): N/A
-//  Returns: N/A
-//  Side Effect: N/A
-//  Postcondition(s): Prints all item data
-//
-void itemDebugPrint (const Item& item);
-
-//
-//  itemGetId
-//
-//  Purpose: Retrieves an items id
-//  Parameter(s):
-//    <1> item: item to retrieve id from
-//  Precondition(s):
-//    <1> item has an id
-//  Returns: A char containing an items id
-//  Side Effect: N/A
-//  Postcondition(s):
-//    <1> the given item's id is returned
-//
-char itemGetId (const Item& item);
-
-//
-//  itemIsInInventory
-//
-//  Purpose: return a boolean that tells if the item is in a players inventory
-//  Parameter(s):
-//    <1> item: item to check if its in an inventory
-//  Precondition(s):
-//    <1> item has been initialized
-//  Returns: A boolean:
-//    <T> true if the item is in the player's inventory
-//    <F> false if the item isn't in the players inventory
-//  Side Effect: N/A
-//  Postcondition(s):
-//    <1> Boolean returned indicating whether the item is in the player's inventory
-//
-bool itemIsInInventory (const Item& item);
-
-//
-//  itemIsAtLocation
-//
-//  Purpose: This function returns whether an item is at a given location
-//  Parameter(s):
-//    <1> item: The item to check the location of
-//    <2> row: the row to check for item
-//    <3> column: the column to check for item
-//  Precondition(s): 
-//    <1> item has been initialized with a position in the World
-//  Returns: A boolean:
-//    <T> true if item was at position [row,column]
-//    <F> falseif item wasn't at position [row, column]
-//  Side Effect: N/A
-//  Postocndition(s):
-//    <1> boolean is returned regarding item's location 
-//
-bool itemIsAtLocation (const Item& item,
-                       int row, int column);
-
-//
-//  itemGetPlayerPoints
-//
-//  Purpose: Returns how many points the player currently has from a given item.
-//           If the item is not in the player's inventory, the function should return 0.
-//  Parameter(s):
-//    <1> item: item to retrieve point value from
-//  Precondition(s): 
-//    <1> item has been initialized with a point value
-//  Returns: An int containing the point value of item
-//  Side Effect: N/A
-//  Postcondition(s):
-//    <1> The item's point value is returned                  
-//   
-int itemGetPlayerPoints (const Item& item);
-
-//
-//  itemPrintDescription
-//
-//  Purpose: If the item is in the player's inventory, the function will print the 
-//           inventory description; otherwise it will print the world description.
-//  Parameter(s):
-//    <1> item: item to print description of
-//  Precondition(s): 
-//    <1> item has been initialized
-//  Returns: N/A
-//  Side Effect: N/A
-//  Postcondition(s):
-//    <1>  The item's description is printed based on its state (in world or in inventory)
-//
-void itemPrintDescription (const Item& item);
-
-//
-//  itemReset
-//
-//  Purpose: Moves the item to its starting location and set it to not be in the 
-//           player’s inventory.
-//  Parameter(s):
-//    <1> item: the item to reset
-//  Precondition(s): N/A
-//  Returns: N/A
-//  Side Effect: N/A
-//  Postcondition(s): 
-//    <1> Item's position is set to [startingRow, startingCol] and inPlayerInventory is set
-//        to false.
-//
-void itemReset (Item& item);
-
-//
-//  itemMoveToInventory
-//
-//  Purpose: Change an item's state so it is in a player's inventory
-//  Parameter(s):
-//    <1> item: item to move to player inventory
-//  Precondition(s): 
-//    <1> Item has been initialized
-//  Returns: N/A
-//  Side Effect: N/A
-//  Postcondition(s):
-//    <1> the item's inPlayerInventory boolean is set to true
-//
-void itemMoveToInventory (Item& item);
-
-//
-//  itemMoveLocation
-//
-//  Purpose: Moves an item from its current position to a given one
-//  Parameter(s):
-//    <1> item: the item to move
-//    <2> row: the row to move it to
-//    <3> column: the column to move it to
-//  Precondition(s):
-//  Returns: N/A
-//  Side Effect: N/A
-//  Postcondition(s):
-//    <1> Item is moved to the given location
-//    <2> Item is set to be not in the players inventory
-//
-void itemMoveToLocation (Item& item, int row, int column);

@@ -1,10 +1,7 @@
 // Author: Owen Monus
 // Student ID: 200482797   
-// Date: September 29th 2022
-// Class: CS115 _ University of Regina
+// Date: October 22nd 2022
 
-
-// includes
 #include "Item.h"
 #include "World.h"
 #include "Location.h"
@@ -14,10 +11,11 @@ using namespace std;
 // helper functionn declarations
 void printItemDescription(Location location, Item items[], const unsigned int numOfItems);
 void checkGameState(World &world, Location location, bool &worldIsValid);
-void handlePlayerInput(const string &userInput, bool &worldIsValid, World &world, Location &location, Item items[], const unsigned int ITEM_COUNT);
+void handlePlayerInput(string &userInput, bool &worldIsValid, World &world, Location &location, Item items[], const unsigned int ITEM_COUNT);
 void printPlayerScore(const Item items[], const unsigned int numOfItems);
 
 int main () {
+    // initialize variables
     const unsigned int ITEM_COUNT = 9;
     string userInput;
 
@@ -89,14 +87,17 @@ int main () {
         }
     };
 
+    // initialize world 
+    Location playerLocation = world.getStart();
+    
+    // begin game
     world.printStartMessage();
     cout << '\n';
-
-    Location playerLocation = world.getStart();
     world.printDescription(playerLocation);
     printItemDescription(playerLocation, items, ITEM_COUNT);
     cout << '\n'; 
     
+    // run game
     while(worldIsValid) {
          cout << "Next? ";
          getline(cin, userInput);
@@ -182,21 +183,24 @@ void checkGameState(World &world, Location location, bool &worldIsValid) {
 //    <1> If there is an item in items[] that is at the provided index, its description
 //        will be printed out
 //
-void handlePlayerInput(const string &userInput, bool &worldIsValid, World &world, Location &location, Item items[], const unsigned int ITEM_COUNT) {
+void handlePlayerInput(string &userInput, bool &worldIsValid, World &world, Location &location, Item items[], const unsigned int ITEM_COUNT) {
     switch (userInput[0]) { 
             case '#': { //if a comment is entered
                 break; //do nothing
             } // end # case
             case 'q': { //if the player wants to quit
                 cout << "Are you sure you want to quit? ";
-                string toQuit = "";
-                cin >> toQuit;
-                if (toQuit[0] == 'y') {
+                // string toQuit = "";
+                getline(cin, userInput);
+                if (userInput[0] == 'y') {
                     worldIsValid = false;
-                } //end if
-                else if (toQuit[0] == 'n') {
+                } //end (y) if
+                else if (userInput[0] == 'n') {
                     break;
-                }
+                } // end (n) else if
+                else {
+                    cout << "Invalid command!" << endl;
+                } // end else
                 break;
             } // end q case
             case 'n': { //if the player wants to move north
@@ -291,7 +295,9 @@ void handlePlayerInput(const string &userInput, bool &worldIsValid, World &world
             } // end default case
     } //end switch
     
-    cout << endl; //prints a new line between Next?'s
+    //prints a new line between Next?'s
+    cout << endl;
+    // ensures the game isnt located at a death or victory node
     checkGameState(world, location, worldIsValid);
 } // end handlePlayerInput
 
@@ -312,7 +318,7 @@ void handlePlayerInput(const string &userInput, bool &worldIsValid, World &world
 void printPlayerScore(const Item items[], const unsigned int numOfItems) {
     int score = 0;
     for (int i = 0; i < numOfItems; i++) {
-        score += items[i].getPlayerPoints();
+        score += items[i].getPlayerPoints(); //tally players score
     } // end for
     cout << "In this game you scored " << score << " points." << endl;
 } // end printPlayerScore`````````

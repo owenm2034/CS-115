@@ -1,17 +1,28 @@
 // Name: Owen Monus
 // Student Number: 200482797
-// Date: Sept 26, 2022
+// Date: October 22, 2022
 
 #include <string>
 #include <iostream>
 #include <fstream>
-
-
+#include "World.h"
 using namespace std;
 
-#include "World.h"
+//
+// Phil's helper function -> it checks if a string has content
+bool stringHasContent(string toCheck)
+{
+    if(toCheck.empty()){
+        return false;
+    }
 
-bool stringHasContent(string toCheck);
+    for(int i = 0; i < toCheck.length(); i++){
+        if(toCheck.at(i) != ' ' || toCheck.at(i) != '\n' || toCheck.at(i) != '\0'){
+            return true;
+        }
+    }
+    return false;
+}
 
 void World::loadNodes(string filename)
 {
@@ -134,6 +145,7 @@ bool World::isValid(const Location& location) const
 
 bool World::isDeath(const Location& location) const 
 {
+    assert(isInvariantTrue());
     assert(isValid(location)); 
     if(nodes[location.row][location.column] == DEATH_NODE) {
         return true;
@@ -256,20 +268,4 @@ void World::printDescription (const Location& location) const
     assert(isInvariantTrue());
     assert(isValid(location));
     cout << descriptions[nodes[location.row][location.column]];
-}
-
-//
-// Phil's helper function -> it checks if a string has content
-bool stringHasContent(string toCheck)
-{
-    if(toCheck.empty()){
-        return false;
-    }
-
-    for(int i = 0; i < toCheck.length(); i++){
-        if(toCheck.at(i) != ' ' || toCheck.at(i) != '\n' || toCheck.at(i) != '\0'){
-            return true;
-        }
-    }
-    return false;
 }
