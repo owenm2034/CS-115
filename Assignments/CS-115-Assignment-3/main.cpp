@@ -11,7 +11,7 @@ using namespace std;
 // helper functionn declarations
 void printItemDescription(Location location, Item items[], const unsigned int numOfItems);
 void checkGameState(World &world, Location location, bool &worldIsValid);
-void handlePlayerInput(const string &userInput, bool &worldIsValid, World &world, Location &location, Item items[], const unsigned int ITEM_COUNT);
+void handlePlayerInput(string &userInput, bool &worldIsValid, World &world, Location &location, Item items[], const unsigned int ITEM_COUNT);
 void printPlayerScore(const Item items[], const unsigned int numOfItems);
 
 int main () {
@@ -183,21 +183,24 @@ void checkGameState(World &world, Location location, bool &worldIsValid) {
 //    <1> If there is an item in items[] that is at the provided index, its description
 //        will be printed out
 //
-void handlePlayerInput(const string &userInput, bool &worldIsValid, World &world, Location &location, Item items[], const unsigned int ITEM_COUNT) {
+void handlePlayerInput(string &userInput, bool &worldIsValid, World &world, Location &location, Item items[], const unsigned int ITEM_COUNT) {
     switch (userInput[0]) { 
             case '#': { //if a comment is entered
                 break; //do nothing
             } // end # case
             case 'q': { //if the player wants to quit
                 cout << "Are you sure you want to quit? ";
-                string toQuit = "";
-                cin >> toQuit;
-                if (toQuit[0] == 'y') {
+                // string toQuit = "";
+                getline(cin, userInput);
+                if (userInput[0] == 'y') {
                     worldIsValid = false;
-                } //end if
-                else if (toQuit[0] == 'n') {
+                } //end (y) if
+                else if (userInput[0] == 'n') {
                     break;
-                }
+                } // end (n) else if
+                else {
+                    cout << "Invalid command!" << endl;
+                } // end else
                 break;
             } // end q case
             case 'n': { //if the player wants to move north
