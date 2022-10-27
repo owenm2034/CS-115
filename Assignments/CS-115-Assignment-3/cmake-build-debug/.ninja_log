@@ -1,0 +1,6 @@
+# ninja log v5
+0	300	1666809649226836683	CMakeFiles/CS_115_Assignment_3.dir/Location.cpp.o	9653f2647a33b8d1
+0	302	1666809649229171472	CMakeFiles/CS_115_Assignment_3.dir/Item.cpp.o	53c752b8f38c4ae8
+0	305	1666809649233373300	CMakeFiles/CS_115_Assignment_3.dir/main.cpp.o	968544fa93a02af1
+0	357	1666809649284694236	CMakeFiles/CS_115_Assignment_3.dir/World.cpp.o	bb21acade0ed5ad2
+357	388	1666809649317169071	CS_115_Assignment_3	b21327a4afd17080
