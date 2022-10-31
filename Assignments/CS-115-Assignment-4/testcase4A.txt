@@ -1,0 +1,15 @@
+# Testcase 4A
+# -----------
+# Test that game world still works
+# walk around a bit
+n
+e
+n
+s
+w
+w
+e
+s
+
+# win with 0 points
+s
