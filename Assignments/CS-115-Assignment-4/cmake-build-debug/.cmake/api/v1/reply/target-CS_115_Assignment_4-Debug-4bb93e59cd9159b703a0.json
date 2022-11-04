@@ -55,7 +55,8 @@
 				0,
 				1,
 				2,
-				3
+				3,
+				4
 			]
 		}
 	],
@@ -91,18 +92,13 @@
 				0,
 				1,
 				2,
-				3
+				3,
+				4
 			]
 		}
 	],
 	"sources" : 
 	[
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "main.cpp",
-			"sourceGroupIndex" : 0
-		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
@@ -118,7 +114,19 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "World.cpp",
+			"path" : "ItemManager.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "TestHelper.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "TestItemManager4A.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

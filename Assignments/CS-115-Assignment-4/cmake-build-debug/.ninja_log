@@ -1,6 +1,12 @@
 # ninja log v5
-0	225	1666812151485358990	CMakeFiles/CS_115_Assignment_4.dir/Location.cpp.o	1f6dcdaacea9a1a9
-0	233	1666812151494129163	CMakeFiles/CS_115_Assignment_4.dir/Item.cpp.o	a13158c4770002c5
-0	237	1666812151497536325	CMakeFiles/CS_115_Assignment_4.dir/main.cpp.o	78c10d0dcd38cb9f
-1	289	1666812151550091610	CMakeFiles/CS_115_Assignment_4.dir/World.cpp.o	9041435f83dfcd7f
-289	320	1666812151582249631	CS_115_Assignment_4	1c5c6d44b106b4c7
+1	282	1667335040250288740	CMakeFiles/CS_115_Assignment_4.dir/Location.cpp.o	1f6dcdaacea9a1a9
+1	288	1667335040255875339	CMakeFiles/CS_115_Assignment_4.dir/Item.cpp.o	a13158c4770002c5
+345	391	1667335040361082437	CS_115_Assignment_4	1c5c6d44b106b4c7
+0	292	1667335040260787317	CMakeFiles/CS_115_Assignment_4.dir/main.cpp.o	78c10d0dcd38cb9f
+1	345	1667335040313824280	CMakeFiles/CS_115_Assignment_4.dir/World.cpp.o	9041435f83dfcd7f
+2	274	1667529881090433961	CMakeFiles/CS_115_Assignment_4.dir/ItemManager.cpp.o	b2c7f2db417f0888
+3	310	1667529881126426746	CMakeFiles/CS_115_Assignment_4.dir/TestHelper.cpp.o	53632ffaaa901c4
+3	310	1667529881127533781	CMakeFiles/CS_115_Assignment_4.dir/TestItemManager4A.cpp.o	3829939560b86825
+311	1121	1667529881938858155	CS_115_Assignment_4	4e64648c980a0e1
+2	287	1667530052008678333	CMakeFiles/CS_115_Assignment_4.dir/ItemManager.cpp.o	b2c7f2db417f0888
+287	330	1667530052055699470	CS_115_Assignment_4	4e64648c980a0e1
