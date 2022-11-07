@@ -25,3 +25,8 @@ Labs/.DS_Store
 *.json
 *.xml
 *.log
+*.log
+Assignments/CS-115-Assignment-4/cmake-build-debug/.ninja_deps
+Assignments/CS-115-Assignment-4/cmake-build-debug/.ninja_log
+Assignments/CS-115-Assignment-4/cmake-build-debug/CS_115_Assignment_4
+Assignments/CS-115-Assignment-4/cmake-build-debug/Testing/Temporary/LastTest.log
