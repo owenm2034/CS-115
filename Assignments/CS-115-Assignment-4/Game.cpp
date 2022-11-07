@@ -48,7 +48,7 @@ void Game::printInventory() const {
 
 void Game::printScore() const {
     assert(isInvariantTrue());
-    cout << "Your total score is: " << itemManager.getScore() << endl;
+    cout << "Your total score was: " << itemManager.getScore() << endl;
 }
 
 void Game::reset() {
@@ -61,7 +61,7 @@ void Game::reset() {
 void Game::moveNorth() {
     assert(isInvariantTrue());
     if (world.canGoNorth(playerLocation)) {
-        world.getNorth(playerLocation);
+        playerLocation = world.getNorth(playerLocation);
         printDescription();
     } else
         cout << "You can not move in that direction" << endl;
@@ -71,7 +71,7 @@ void Game::moveNorth() {
 void Game::moveSouth() {
     assert(isInvariantTrue());
     if (world.canGoSouth(playerLocation)) {
-        world.canGoSouth(playerLocation);
+        playerLocation = world.getSouth(playerLocation);
         printDescription();
     } else
         cout << "You can not move in that direction" << endl;
@@ -81,7 +81,7 @@ void Game::moveSouth() {
 void Game::moveEast() {
     assert(isInvariantTrue());
     if (world.canGoEast(playerLocation)) {
-        world.getEast(playerLocation);
+        playerLocation = world.getEast(playerLocation);
         printDescription();
     } else
         cout << "You can not move in that direction" << endl;
@@ -91,7 +91,7 @@ void Game::moveEast() {
 void Game::moveWest() {
     assert(isInvariantTrue());
     if (world.canGoWest(playerLocation)) {
-        world.getWest(playerLocation);
+        playerLocation = world.getWest(playerLocation);
         printDescription();
     } else
         cout << "You can not move in that direction" << endl;

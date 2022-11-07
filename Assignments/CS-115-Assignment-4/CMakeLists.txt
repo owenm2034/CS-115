@@ -3,4 +3,4 @@ project(CS_115_Assignment_4)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(CS_115_Assignment_4 Location.cpp Item.cpp ItemManager.cpp TestHelper.cpp TestItemManager4A.cpp Game.cpp Game.h)
+add_executable(CS_115_Assignment_4 Location.cpp World.cpp Item.cpp ItemManager.cpp Game.cpp main.cpp)
