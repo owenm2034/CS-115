@@ -1,0 +1,105 @@
+# Testcase 4D
+# -----------
+# Solution
+
+# get items south of manor
+n
+e
+e
+e
+e
+s
+s
+w
+t
+r
+e
+n
+n
+w
+w
+w
+w
+w
+w
+s
+w
+t
+d
+
+# get key
+e
+n
+n
+w
+n
+n
+n
+n
+t
+k
+
+# get items inside manor
+s
+s
+e
+e
+n
+n
+n
+w
+t
+c
+e
+s
+s
+s
+e
+e
+n
+t
+b
+
+# get item on far side of manor
+e
+n
+e
+e
+e
+s
+s
+e
+s
+s
+s
+t
+p
+
+# return to start
+n
+n
+n
+w
+n
+w
+n
+w
+w
+s
+w
+s
+w
+w
+w
+w
+s
+s
+e
+s
+e
+e
+s
+
+# about to win with 34 points
+s
+

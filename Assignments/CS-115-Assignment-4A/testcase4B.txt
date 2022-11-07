@@ -1,0 +1,22 @@
+# Testcase 4B
+# -----------
+# Test reset
+
+# get dagger (d)
+n
+w
+w
+s
+w
+t
+d
+i
+
+# reset with 1 point
+r
+y
+
+# win with 0 points
+s
+
+

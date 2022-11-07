@@ -1,0 +1,105 @@
+# Testcase 4C
+# -----------
+# Test piling up multiple items on a node
+
+# get the moth
+n
+e
+e
+e
+n
+n
+w
+t
+m
+i
+
+# get the dagger and key
+e
+s
+s
+w
+w
+w
+w
+w
+s
+w
+t
+d
+e
+n
+n
+w
+n
+n
+n
+n
+t
+k
+i
+
+# get the tarantula
+s
+s
+e
+e
+e
+e
+n
+e
+n
+e
+e
+e
+e
+t
+t
+i
+
+# get the scarab beetle
+w
+w
+w
+w
+s
+w
+s
+w
+w
+n
+n
+n
+e
+n
+t
+s
+i
+
+# take items to start
+s
+w
+s
+s
+s
+w
+w
+s
+s
+e
+s
+e
+e
+s
+l
+d
+l
+k
+n
+s
+# should have just printed key (k) and dagger (d)
+
+# quit with -15 points
+q
+y
+

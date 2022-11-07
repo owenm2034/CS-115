@@ -1,0 +1,36 @@
+# Testcase 4E
+# -----------
+# Get items, restart, see missing item
+
+# get ring
+n
+e
+e
+e
+e
+s
+s
+w
+t
+r
+i
+# should have printed ring
+
+# restart, go to ring
+r
+y
+n
+e
+e
+e
+e
+s
+s
+w
+# should have seen ring on ground (not inventory)
+
+# die with 0 points
+e
+e
+e
+
