@@ -218,7 +218,7 @@ class World {
         Location getWest (const Location& location) const;
         
         /** 
-         * @brief Print the games start message
+         * @brief Gets the location of the StartNode
          * 
          * @pre isInvariantTrue()
          * 
