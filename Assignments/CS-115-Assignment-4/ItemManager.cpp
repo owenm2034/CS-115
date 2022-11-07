@@ -30,63 +30,63 @@ bool ItemManager::isInvariantTrue() const {
 ItemManager::ItemManager(const string &game_name) {
     items[0] = { // scarab beetle
             's',
-            Location(0, 3),
+            Location(3),
             -5,
             "There is a black scarab beetle (s) here.",
             "A black scarab beetle (s) is crawling up your arm."
     };
     items[1] = { // candle stick
             'c',
-            Location(1, 1),
+            Location(7),
             9,
             "There is a silver candlestick (c) here.",
             "You are carrying a silver candlestick (c)."
     };
     items[2] = { // key
             'k',
-            Location(2, 0),
+            Location(13),
             3,
             "There is an old iron key (k) here.",
             "You have an old iron key (k) in your pocket."
     };
     items[3] = { // tarantula
             't',
-            Location(2, 9),
+            Location(19),
             -8,
             "There is a tarantula (t) here.",
             "There is a tarantula (t) hanging on your shirt."
     };
     items[4] = { // book
             'b',
-            Location(3, 4),
+            Location(22),
             4,
             "There is a book (b) here with an eye drawn on the cover.",
             "You have a book (b) under your arm with an eye drawn on the cover."
     };
     items[5] = { // moth
             'm',
-            Location(5, 5),
+            Location(37),
             -2,
             "There is a giant moth (m) sleeping here.",
             "A giant moth (m) is perched on your shoulder."
     };
     items[6] = { //amulet
             'p',
-            Location(7, 9),
+            Location(52),
             7,
             "There is a golden pendant (p) here.",
             "You are wearing a golden pendant (p)."
     };
     items[7] = { // dagger
             'd',
-            Location(8, 0),
+            Location(53),
             1,
             "There is a rune-carved dagger (d) here.",
             "You have a rune-carved dagger (d) stuck in your belt."
     };
     items[8] = { // ring
             'r',
-            Location(9, 6),
+            Location(58),
             10,
             "There is a diamond ring (r) here.",
             "You are wearing a diamond ring (r)."
