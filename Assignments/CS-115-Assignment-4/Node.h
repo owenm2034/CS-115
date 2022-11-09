@@ -23,7 +23,7 @@ public:
     Node();
 
     /**
-     * @brief Initializes every value of a node
+     * @brief Initialize a node
      * @param description1 unsigned int the nodes description
      * @param north1 unsigned int of the node to the north
      * @param south1 unsigned int of the node to the south
@@ -44,16 +44,40 @@ public:
      */
     void debugPrint() const;
 
-    unsigned int getDescription () const;
+    /**
+     *
+     * @return the node description
+     */
+    unsigned int getDescription() const;
 
+    /**
+     *
+     * @return the location to the north of the node
+     */
     Location getNorth() const;
 
+    /**
+     *
+     * @return @return the location to the south of the node
+     */
     Location getSouth() const;
 
+    /**
+     *
+     * @return the location to the east of the node
+     */
     Location getEast() const;
 
+    /**
+     *
+     * @return the location to the west of the node
+     */
     Location getWest() const;
 
+    /**
+     *
+     * @return whether or not a node is a death node
+     */
     bool isDeath() const;
 
 };
