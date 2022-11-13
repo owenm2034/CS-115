@@ -1,14 +1,15 @@
-//
-// Created by Owen Monus on 2022-11-03.
-//
+// Name: Owen Monus
+// Student Number: 200482797
+// Date: Nov 10, 2022
 
 #include "ItemManager.h"
 #include <cassert>
+
 using namespace std;
 
 // private
 unsigned int ItemManager::find(char id) const {
-    for (int i = 0; i < ITEM_COUNT; i++){
+    for (int i = 0; i < ITEM_COUNT; i++) {
         if (items[i].getId() == id) {
             return i;
         }
@@ -121,7 +122,7 @@ void ItemManager::printAtLocation(const Location &location) const {
 
 void ItemManager::printInventory() const {
     assert(isInvariantTrue());
-    for(int i = 0; i < ITEM_COUNT; i++) {
+    for (int i = 0; i < ITEM_COUNT; i++) {
         if (items[i].isInInventory()) {
             items[i].printDescription();
         }

@@ -1,6 +1,6 @@
-// Author: Owen Monus
-// Student ID: 200482797   
-// Date: October 22nd 2022
+// Name: Owen Monus
+// Student Number: 200482797
+// Date: Nov 10, 2022
 
 #include "Game.h"
 #include <iostream>

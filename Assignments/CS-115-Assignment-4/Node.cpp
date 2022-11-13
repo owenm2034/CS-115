@@ -1,6 +1,6 @@
-//
-// Created by Owen Monus on 2022-11-07.
-//
+// Name: Owen Monus
+// Student Number: 200482797
+// Date: Nov 10, 2022
 
 #include "Node.h"
 
@@ -13,8 +13,7 @@ Node::Node(unsigned int description1, unsigned int north1, unsigned int south1, 
 void Node::debugPrint() const {
     if (is_death) {
         cout << "D";
-    }
-    else {
+    } else {
         cout << "N";
     }
     cout << " " << description << " " << north << " " << south << " " << east << " " << west << endl;

@@ -1,11 +1,13 @@
-//
-// Created by Owen Monus on 2022-11-07.
-//
+// Name: Owen Monus
+// Student Number: 200482797
+// Date: Nov 10, 2022
 
 #ifndef CS_115_ASSIGNMENT_4_NODE_H
 #define CS_115_ASSIGNMENT_4_NODE_H
 
 #include "Location.h"
+
+const Location NO_SUCH_LOCATION(-1);
 
 class Node {
 private:

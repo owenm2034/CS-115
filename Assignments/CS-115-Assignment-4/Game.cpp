@@ -1,6 +1,6 @@
-//
-// Created by Owen Monus on 2022-11-03.
-//
+// Name: Owen Monus
+// Student Number: 200482797
+// Date: Nov 10, 2022
 
 #include "Game.h"
 
