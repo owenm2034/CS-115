@@ -40,8 +40,7 @@ void World::loadNodes(string filename) {
         fin >> type >> d >> n >> s >> e >> w;
         if (type == 'D') {
             nodes[i] = Node(d, n, s, e, w, true);
-        }
-        else if (type == 'O') { //if it's an obstructed node, then the additional variables are read into dummy variables.
+        } else if (type == 'O') { //if an obstructed node, additional variables are read into dummy variables.
             char ob;
             unsigned int a;
             unsigned int b;

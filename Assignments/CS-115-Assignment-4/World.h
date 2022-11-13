@@ -165,7 +165,7 @@ public:
     //      <b> the world's node one row up (row - 1) does not equal INACCESSIBLE
     //  Returns: an instance of location north of the specified location
     //  Side Effect: N/A
-    //  Postcondition(s):
+    //  Post-condition(s):
     //    <1> an instance of location is returned
     //
     Location getNorth(const Location &location) const;

@@ -44,7 +44,7 @@ int main() {
 //  Purpose: Handle user input in a world with items
 //  Parameter(s):
 //    <1> userInput: the user command to resolve
-//    <2> worldIsValid: the boolean that tracks wether or not to keep playing
+//    <2> worldIsValid: the boolean that tracks whether to keep playing
 //    <3> world: the world to check player input for
 //    <4> playerRow: the players current row location
 //    <5> playerCol: the players current column location
@@ -55,7 +55,7 @@ int main() {
 //    <2>  world has been loaded with all nodes and descriptions
 //  Returns: N/A
 //  Side Effect: N/A
-//  Postcondition(s):
+//  Post-condition(s):
 //    <1> If there is an item in items[] that is at the provided index, its description
 //        will be printed out
 //
@@ -101,7 +101,7 @@ void handlePlayerInput(string &userInput, bool &gameIsValid, Game &game) {
             break;
         }
         case 'l': { // if the player wants to leave an item
-            string itemToLeave; // a tempoary variable to hold the id of the item a player wants to pickup
+            string itemToLeave; // a temporary variable to hold the id of the item a player wants to pickup
             cout << "Leave what? ";
             getline(cin, itemToLeave); // read in input
             game.leaveItem(itemToLeave[0]);
