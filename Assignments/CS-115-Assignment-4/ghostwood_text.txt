@@ -1,0 +1,270 @@
+62
+
+Invalid node.
+
+Welcome to Ghostwood Manor!
+There are rumors of treasure in the old haunted house
+but many who venture in never come out again.
+
+Thank you for playing Ghostwood Manor!
+
+Suddenly, the boards beneath you give way.  You tumble downwards
+in a shower of splintered wood and land with a painful crunch on
+the ground below. 
+All around you, you see glowing red eyes peering out of the
+dark.  Then hundreds of hungry rats descend on you.
+Better luck next game.
+
+You are at the north end of a tree-flanked lane.  To the north
+is a wrought iron gate.  A faded sign above the gate says
+"GHOSTWOOD MANOR".
+Below that, someone has scrawled "Enter at your own risk".
+
+You are at a bend in a gravel road.  From here, the road
+continues south and west, and a tree-flanked lane leads north.
+There is a pond to the east.
+You decide to stop adventuring while you're still alive.
+
+You are in the courtyard of the manor.  The main door to the
+north is flanked by dead trees, one of which has dropped a heavy
+branch across it.  There are open areas to the east and west,
+and a wrought iron gate hangs open to the south.
+
+You are in a misty area of the courtyard to the south of the
+manor.  There are open areas to the north, east, and west, and
+trees to the south.  The mist grows thicker to the north.
+
+You are just south of the manor wall.  There are dead trees to
+the east and west, and an open area to the south.  Above you, a
+line of eyeless gargoyles state down at you through the swirling
+mist.
+
+You are in an east/west open area in the courtyard.  There are
+trees to the north and south, although the ones to the north
+appear to be dead.
+
+You are in a grassy area on the north shore of a murky pond.
+The open area continues north, east, and west.
+
+You are on the north shore of a pond in a wooded area.  Trees
+block the way north and east, but there is a more open area to
+the west.  A rickety wooden bridge leads south.
+
+You are a rickety wooden bridge over a murky pond.  The bridge
+continues north and south from here.  You can see a crescent moon
+reflected in the still water below you.
+
+You are at the center of a narrow, east/west island in a murky
+pond.  There is a rickety wooden bridge to the north, murky
+water to the south, and a small building to the west.
+
+You are in a pagoda on the west end of a narrow island.  The
+only way to go is back east.
+
+You are on a high point at the east end of a narrow island.
+Spray flies into the air with each rolling waves that crashes
+against the rocky shore.  A rickety wooden bridge leads farther
+east from here.
+
+You are just south of the east end of the manor wall.  The top
+of the wall is decorated with gargoyles.  There are dead trees
+to the west, living trees to the east, and an open area to the
+south.  You could also climb through a large broken window to
+the north.
+
+You are at the east end of a long room.  There is a dusty four
+poster bed at this end of the room and a large broken window to
+the south.  The fog grows thicker to the west.
+Thick tendrils of fog slither across the floor and wrap around
+your legs.
+
+You are at the west end of a very foggy room.  There is a
+doorway to the north, and a wood carving on the south wall
+showing a pack of eyeless rats devouring a baby in its cradle.
+You can feel tendrils of fog sliding moistly across your skin.
+
+You are in a grassy area in the courtyard.  There are trees to
+the south and west, and open areas to the north and east.  A
+path leads south into the trees.
+
+You are at a bend on a forest path, just north of a wrought iron
+fence.  The path continues north and west from here.
+
+You are at a small clearing in a forest, dominated by a flat,
+table-sized rock.  A path leads into the forest to the east.
+
+You are just south of the west end of the manor wall.  The top
+of the wall is decorated with gargoyles.  There are dead trees
+to the east and open areas to the south and west.
+
+You are in an open area to the north of an impenetrable forest.
+A wrought iron fence blocks the way west from here, and you can
+see an old manor to the northeast.  The open area continues
+north and east from here.
+
+You are in a north/south open area between an old manor to the
+east and a wrought iron fence to the west.
+
+You are at the north end of an open area.  There is a large,
+broken window leading into an old manor to the east, a wrought
+iron fence to the west, and a cave leading into a short cliff to
+the north.
+
+You are in the entrance to a cave.  There is grass outside to
+the south, and the cave slopes downward towards the north.
+
+You are at the north end of a tall, narrow cave.  Sleeping bats
+hang down all over the ceiling, and piles of guano cover the
+floor.  The way out slopes upwards to the north.
+
+You are in a small, barren room.  Piles of drifted leaves have
+blown in from a large broken window to the west.  You can see a
+dim glow -- as if from a candle -- shining under a door to the
+east.
+
+You are at a corner in a dark hallway.  The hallway stretches
+away to the north and east, and there are doors in the south and
+west walls.
+
+You are in a north/south hallway.
+
+You are at a corner in a hallway.  The hallway continues east
+and south from here, and there is a door in the west wall.  On
+the north wall, there is a message that starts "Keep you ey-"
+before trailing off into a scrawled line.
+
+You are in a dining room.  A meal is set at a table, but the
+food has all rotted away and everything is covered in dust.
+There is a door in the east wall and an archway leading north.
+
+You are in a kitchen.  There is a small door to the west and an
+archway opens to the south.  A trail of tiny paw prints leads
+from the door to under a cauldron near the east wall.
+
+You are in an east/west hallway.  There is a door in the north
+wall.
+
+You are at the south end of a small room, near a door.  The
+floor in the rest of the room has collapsed.  You can see the
+top of a set of stairs near the ceiling, but they are
+unreachable.  From below, there is a strong smell of freshly dug
+earth.
+
+You are in an east/west hallway.  There is an archway to the
+south.
+
+You are in the entryway to the manor.  To the south is the main
+door, which appears to be stuck, and to the north is an archway.
+There is a walk-in closet to the east and a round mirror hangs
+above a shoe rack to the west.  Your reflection in the mirror
+has smooth skin where its eyes should be.
+
+You are in an east/west hallway.  There is a doorway on the
+north wall.
+
+You are in the library, a small room with a door on the south
+wall.  Scattered and torn books lie everywhere, especially near
+a man-sized hole smashed through the east wall.  The ceiling of
+this room is covered in pictures of eyes.  Most are crudely
+painted, but some seem almost real.
+
+You are in a north/south hallway.  There is a man-sized hole in
+the west wall.
+
+You are in a T-junction in the hallway.  Branches lead north,
+east, and south.
+
+You are at a corner in a hallway, which continues south and west
+from here.  There is also a scratched and splintered door on the
+north wall, but it has been nailed shut.
+
+You are at the east end of the hallway.  From here a door opens
+east.  You can hear the wind whistling beyond the door.
+
+You are in the northwest corner of the garden.  A door leads
+into the manor to the east.  To the north are bushes wrapped in
+spider webs.  This part of the garden is overgrown with bleeding
+hearts and African blood lilies.
+
+You are in the southwest corner of the garden, to the east of
+the manor.  There are thick trees to the south.  The low plants
+growing here have orange berries, each enclosed in a skeletal
+white cage.
+
+You are in the southeast corner of the garden, where ghost
+peppers grow.  To the east is a clump of intergrown bushes with
+grey, zig-zagging branches.  There are leaves farther into the
+bushes, but none on the outside.  A forest path leads south.
+
+You are in the northeast corner of the garden.  There is an open
+area to the north, and a shed to the east.  There are strange
+plants growing here with black, bat-shaped flowers and long,
+dangling whiskers.
+
+You are in an old shed built from whorled and twisted wood.  The
+only way out is a door to the west.
+
+You are at the south end of a patch of cracked, dry earth.
+Nothing grows here, but you can see a garden to the south.
+There are bushes wrapped in spider webs to the west and dark
+purple plants covered in long thorns to the east.
+
+You are at the north end of a patch of cracked, dry earth.  To
+the north is a wrought iron fence.  There are low weeds growing
+to the west and purple, thorn-covered plants blocking the way
+east.
+
+You are to the east of the manor, just south of a wrought iron
+fence.  To the south are bushes wrapped in spider webs.  There
+is a large, smashed window in the wall to the west, and an open
+area to the east.
+
+You are at a bend in a forest path, which extends north and east
+from here.  A number of low plants with red stems and berries
+that look like eyes grow around you.
+
+You are at a bend in a forest path.  From here, the path runs
+south along a wrought iron fence and west into the trees.  There
+is a red, octopus-like fungus growing here, and the smell of
+rotting flesh hangs in the air.
+
+You are on a forest path that runs north/south along the west
+side of a wrought iron fence.  Long, white moss hangs down from
+the trees.
+
+You are at the south end of a forest path, on the north shore of
+a small pond.  There is a wrought iron fence to the east and
+forest to the west.
+
+Suddenly, a slippery board moves beneath you and you lose your
+balance and tumble into the water below.  You are trying to
+climb back up onto the island when a wave smashes your head
+against a rock and everything goes black.
+Better luck next game.
+
+You turn the doorknob and the door slams open, knocking you to
+the ground.  Rocks of all sizes fall inwards, half-burying you.
+You are trying to dig yourself out when you see glowing red
+eyes peering out from under the cauldren to the east.  Then
+hundreds of hungry rats descend on you.
+Better luck next game.
+
+The door is locked, but still sturdy.  You have no way past.
+
+You unlock the door with your iron key.
+
+The door to the shed is covered in sticky spider webs and you
+can't get them off.
+
+You use your dagger to cut the spider webs on the shed.
+
+========================
+
+43: Chinese lantern (Physalis alkekengi)
+44: Wire netting bush (Corokia cotoneaster)
+45: Black batflower (Tacca chantrieri)
+47/48: Purple devil (Solanum atropurpureum)
+50: Doll's eyes (Actaea pachypoda)
+51: Octopus stinkhorn (Clathrus archeri)
+52: Spanish moss (Tillandsia usneoides)
+

@@ -1,27 +1,34 @@
-// Author: Owen Monus
-// Student ID: 200482797   
-// Date: October 4th 2022
-// Class: CS115 _ University of Regina
+// Name: Owen Monus
+// Student Number: 200482797
+// Date: Nov 10, 2022
 
 #include "iostream"
 #include "Location.h"
+
 using namespace std;
 
 Location::Location() {
-    row = 0;
-    column = 0;
+    nodeIndex = 0;
 }
 
-Location::Location(int row1, int column1) {
-    row = row1;
-    column = column1;
+Location::Location(unsigned int node_index) {
+    nodeIndex = node_index;
 }
 
-bool Location::operator== (const Location& other) const {
-    return ((row == other.row) && (column == other.column));
+bool Location::operator==(const Location &other) const {
+    return (nodeIndex == other.nodeIndex);
 }
 
-ostream& operator<< (ostream& out, const Location& location) {
-    out << "(row = " << location.row << ", column = " << location.column << ')';
+bool Location::isInaccessible() const {
+    return nodeIndex == 0;
+}
+
+ostream &operator<<(ostream &out, const Location &location) {
+    if (location.isInaccessible()) {
+        out << "(node = INACCESSIBLE)";
+    } else {
+        out << "(node = " << location.nodeIndex << ')';
+    }
     return out;
 }
+

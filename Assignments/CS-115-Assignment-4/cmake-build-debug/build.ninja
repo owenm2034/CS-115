@@ -46,16 +46,22 @@ cmake_ninja_workdir = /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-As
 
 build cmake_object_order_depends_target_CS_115_Assignment_4: phony || CMakeFiles/CS_115_Assignment_4.dir
 
-build CMakeFiles/CS_115_Assignment_4.dir/main.cpp.o: CXX_COMPILER__CS_115_Assignment_4_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-4/main.cpp || cmake_object_order_depends_target_CS_115_Assignment_4
-  DEP_FILE = CMakeFiles/CS_115_Assignment_4.dir/main.cpp.o.d
+build CMakeFiles/CS_115_Assignment_4.dir/Location.cpp.o: CXX_COMPILER__CS_115_Assignment_4_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-4/Location.cpp || cmake_object_order_depends_target_CS_115_Assignment_4
+  DEP_FILE = CMakeFiles/CS_115_Assignment_4.dir/Location.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/CS_115_Assignment_4.dir
   OBJECT_FILE_DIR = CMakeFiles/CS_115_Assignment_4.dir
   TARGET_COMPILE_PDB = CMakeFiles/CS_115_Assignment_4.dir/
   TARGET_PDB = CS_115_Assignment_4.pdb
 
-build CMakeFiles/CS_115_Assignment_4.dir/Location.cpp.o: CXX_COMPILER__CS_115_Assignment_4_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-4/Location.cpp || cmake_object_order_depends_target_CS_115_Assignment_4
-  DEP_FILE = CMakeFiles/CS_115_Assignment_4.dir/Location.cpp.o.d
+build CMakeFiles/CS_115_Assignment_4.dir/Node.cpp.o: CXX_COMPILER__CS_115_Assignment_4_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-4/Node.cpp || cmake_object_order_depends_target_CS_115_Assignment_4
+  DEP_FILE = CMakeFiles/CS_115_Assignment_4.dir/Node.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/CS_115_Assignment_4.dir
+  OBJECT_FILE_DIR = CMakeFiles/CS_115_Assignment_4.dir
+
+build CMakeFiles/CS_115_Assignment_4.dir/World.cpp.o: CXX_COMPILER__CS_115_Assignment_4_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-4/World.cpp || cmake_object_order_depends_target_CS_115_Assignment_4
+  DEP_FILE = CMakeFiles/CS_115_Assignment_4.dir/World.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/CS_115_Assignment_4.dir
   OBJECT_FILE_DIR = CMakeFiles/CS_115_Assignment_4.dir
@@ -70,8 +76,20 @@ build CMakeFiles/CS_115_Assignment_4.dir/Item.cpp.o: CXX_COMPILER__CS_115_Assign
   TARGET_COMPILE_PDB = CMakeFiles/CS_115_Assignment_4.dir/
   TARGET_PDB = CS_115_Assignment_4.pdb
 
-build CMakeFiles/CS_115_Assignment_4.dir/World.cpp.o: CXX_COMPILER__CS_115_Assignment_4_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-4/World.cpp || cmake_object_order_depends_target_CS_115_Assignment_4
-  DEP_FILE = CMakeFiles/CS_115_Assignment_4.dir/World.cpp.o.d
+build CMakeFiles/CS_115_Assignment_4.dir/ItemManager.cpp.o: CXX_COMPILER__CS_115_Assignment_4_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-4/ItemManager.cpp || cmake_object_order_depends_target_CS_115_Assignment_4
+  DEP_FILE = CMakeFiles/CS_115_Assignment_4.dir/ItemManager.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/CS_115_Assignment_4.dir
+  OBJECT_FILE_DIR = CMakeFiles/CS_115_Assignment_4.dir
+
+build CMakeFiles/CS_115_Assignment_4.dir/Game.cpp.o: CXX_COMPILER__CS_115_Assignment_4_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-4/Game.cpp || cmake_object_order_depends_target_CS_115_Assignment_4
+  DEP_FILE = CMakeFiles/CS_115_Assignment_4.dir/Game.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/CS_115_Assignment_4.dir
+  OBJECT_FILE_DIR = CMakeFiles/CS_115_Assignment_4.dir
+
+build CMakeFiles/CS_115_Assignment_4.dir/main.cpp.o: CXX_COMPILER__CS_115_Assignment_4_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-4/main.cpp || cmake_object_order_depends_target_CS_115_Assignment_4
+  DEP_FILE = CMakeFiles/CS_115_Assignment_4.dir/main.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++14
   OBJECT_DIR = CMakeFiles/CS_115_Assignment_4.dir
   OBJECT_FILE_DIR = CMakeFiles/CS_115_Assignment_4.dir
@@ -86,7 +104,7 @@ build CMakeFiles/CS_115_Assignment_4.dir/World.cpp.o: CXX_COMPILER__CS_115_Assig
 #############################################
 # Link the executable CS_115_Assignment_4
 
-build CS_115_Assignment_4: CXX_EXECUTABLE_LINKER__CS_115_Assignment_4_Debug CMakeFiles/CS_115_Assignment_4.dir/main.cpp.o CMakeFiles/CS_115_Assignment_4.dir/Location.cpp.o CMakeFiles/CS_115_Assignment_4.dir/Item.cpp.o CMakeFiles/CS_115_Assignment_4.dir/World.cpp.o
+build CS_115_Assignment_4: CXX_EXECUTABLE_LINKER__CS_115_Assignment_4_Debug CMakeFiles/CS_115_Assignment_4.dir/Location.cpp.o CMakeFiles/CS_115_Assignment_4.dir/Node.cpp.o CMakeFiles/CS_115_Assignment_4.dir/World.cpp.o CMakeFiles/CS_115_Assignment_4.dir/Item.cpp.o CMakeFiles/CS_115_Assignment_4.dir/ItemManager.cpp.o CMakeFiles/CS_115_Assignment_4.dir/Game.cpp.o CMakeFiles/CS_115_Assignment_4.dir/main.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/CS_115_Assignment_4.dir
   POST_BUILD = :
