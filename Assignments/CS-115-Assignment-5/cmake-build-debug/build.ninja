@@ -104,6 +104,116 @@ build CS_115_Assignment_5: CXX_EXECUTABLE_LINKER__CS_115_Assignment_5_Debug CMak
   TARGET_FILE = CS_115_Assignment_5
   TARGET_PDB = CS_115_Assignment_5.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target Part_A_Test
+
+
+#############################################
+# Order-only phony target for Part_A_Test
+
+build cmake_object_order_depends_target_Part_A_Test: phony || CMakeFiles/Part_A_Test.dir
+
+build CMakeFiles/Part_A_Test.dir/Location.cpp.o: CXX_COMPILER__Part_A_Test_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/Location.cpp || cmake_object_order_depends_target_Part_A_Test
+  DEP_FILE = CMakeFiles/Part_A_Test.dir/Location.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++11
+  OBJECT_DIR = CMakeFiles/Part_A_Test.dir
+  OBJECT_FILE_DIR = CMakeFiles/Part_A_Test.dir
+
+build CMakeFiles/Part_A_Test.dir/Item.cpp.o: CXX_COMPILER__Part_A_Test_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/Item.cpp || cmake_object_order_depends_target_Part_A_Test
+  DEP_FILE = CMakeFiles/Part_A_Test.dir/Item.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++11
+  OBJECT_DIR = CMakeFiles/Part_A_Test.dir
+  OBJECT_FILE_DIR = CMakeFiles/Part_A_Test.dir
+
+build CMakeFiles/Part_A_Test.dir/ItemManager.cpp.o: CXX_COMPILER__Part_A_Test_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/ItemManager.cpp || cmake_object_order_depends_target_Part_A_Test
+  DEP_FILE = CMakeFiles/Part_A_Test.dir/ItemManager.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++11
+  OBJECT_DIR = CMakeFiles/Part_A_Test.dir
+  OBJECT_FILE_DIR = CMakeFiles/Part_A_Test.dir
+
+build CMakeFiles/Part_A_Test.dir/TestHelper.cpp.o: CXX_COMPILER__Part_A_Test_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/TestHelper.cpp || cmake_object_order_depends_target_Part_A_Test
+  DEP_FILE = CMakeFiles/Part_A_Test.dir/TestHelper.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++11
+  OBJECT_DIR = CMakeFiles/Part_A_Test.dir
+  OBJECT_FILE_DIR = CMakeFiles/Part_A_Test.dir
+
+build CMakeFiles/Part_A_Test.dir/TestItemManager5.cpp.o: CXX_COMPILER__Part_A_Test_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/TestItemManager5.cpp || cmake_object_order_depends_target_Part_A_Test
+  DEP_FILE = CMakeFiles/Part_A_Test.dir/TestItemManager5.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++11
+  OBJECT_DIR = CMakeFiles/Part_A_Test.dir
+  OBJECT_FILE_DIR = CMakeFiles/Part_A_Test.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Part_A_Test
+
+
+#############################################
+# Link the executable Part_A_Test
+
+build Part_A_Test: CXX_EXECUTABLE_LINKER__Part_A_Test_Debug CMakeFiles/Part_A_Test.dir/Location.cpp.o CMakeFiles/Part_A_Test.dir/Item.cpp.o CMakeFiles/Part_A_Test.dir/ItemManager.cpp.o CMakeFiles/Part_A_Test.dir/TestHelper.cpp.o CMakeFiles/Part_A_Test.dir/TestItemManager5.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk
+  OBJECT_DIR = CMakeFiles/Part_A_Test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Part_A_Test
+  TARGET_PDB = Part_A_Test.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target Part_A.16_Test
+
+
+#############################################
+# Order-only phony target for Part_A.16_Test
+
+build cmake_object_order_depends_target_Part_A.16_Test: phony || CMakeFiles/Part_A.16_Test.dir
+
+build CMakeFiles/Part_A.16_Test.dir/Location.cpp.o: CXX_COMPILER__Part_A.2e16_Test_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/Location.cpp || cmake_object_order_depends_target_Part_A.16_Test
+  DEP_FILE = CMakeFiles/Part_A.16_Test.dir/Location.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++11
+  OBJECT_DIR = CMakeFiles/Part_A.16_Test.dir
+  OBJECT_FILE_DIR = CMakeFiles/Part_A.16_Test.dir
+
+build CMakeFiles/Part_A.16_Test.dir/Item.cpp.o: CXX_COMPILER__Part_A.2e16_Test_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/Item.cpp || cmake_object_order_depends_target_Part_A.16_Test
+  DEP_FILE = CMakeFiles/Part_A.16_Test.dir/Item.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++11
+  OBJECT_DIR = CMakeFiles/Part_A.16_Test.dir
+  OBJECT_FILE_DIR = CMakeFiles/Part_A.16_Test.dir
+
+build CMakeFiles/Part_A.16_Test.dir/ItemManager.cpp.o: CXX_COMPILER__Part_A.2e16_Test_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/ItemManager.cpp || cmake_object_order_depends_target_Part_A.16_Test
+  DEP_FILE = CMakeFiles/Part_A.16_Test.dir/ItemManager.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++11
+  OBJECT_DIR = CMakeFiles/Part_A.16_Test.dir
+  OBJECT_FILE_DIR = CMakeFiles/Part_A.16_Test.dir
+
+build CMakeFiles/Part_A.16_Test.dir/TestHelper.cpp.o: CXX_COMPILER__Part_A.2e16_Test_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/TestHelper.cpp || cmake_object_order_depends_target_Part_A.16_Test
+  DEP_FILE = CMakeFiles/Part_A.16_Test.dir/TestHelper.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++11
+  OBJECT_DIR = CMakeFiles/Part_A.16_Test.dir
+  OBJECT_FILE_DIR = CMakeFiles/Part_A.16_Test.dir
+
+build CMakeFiles/Part_A.16_Test.dir/TestItemManager5.cpp.o: CXX_COMPILER__Part_A.2e16_Test_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/TestItemManager5.cpp || cmake_object_order_depends_target_Part_A.16_Test
+  DEP_FILE = CMakeFiles/Part_A.16_Test.dir/TestItemManager5.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++11
+  OBJECT_DIR = CMakeFiles/Part_A.16_Test.dir
+  OBJECT_FILE_DIR = CMakeFiles/Part_A.16_Test.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Part_A.16_Test
+
+
+#############################################
+# Link the executable Part_A.16_Test
+
+build Part_A.16_Test: CXX_EXECUTABLE_LINKER__Part_A.2e16_Test_Debug CMakeFiles/Part_A.16_Test.dir/Location.cpp.o CMakeFiles/Part_A.16_Test.dir/Item.cpp.o CMakeFiles/Part_A.16_Test.dir/ItemManager.cpp.o CMakeFiles/Part_A.16_Test.dir/TestHelper.cpp.o CMakeFiles/Part_A.16_Test.dir/TestItemManager5.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk
+  OBJECT_DIR = CMakeFiles/Part_A.16_Test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Part_A.16_Test
+  TARGET_PDB = Part_A.16_Test.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -138,7 +248,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/cmake-build-debug
 
-build all: phony CS_115_Assignment_5
+build all: phony CS_115_Assignment_5 Part_A_Test Part_A.16_Test
 
 # =============================================================================
 # Built-in targets

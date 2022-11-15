@@ -8,12 +8,14 @@
 
 #include "Item.h"
 
-const unsigned int ITEM_COUNT = 9;
 const unsigned int NO_SUCH_ITEM = 999999999;
 
 class ItemManager {
 private:
-    Item items[ITEM_COUNT];
+    Item* item_ptr;
+    int item_count;
+
+    void load(const string &filename);
 
     /**
      * @brief If there is an item with the passed id, it should return that item's index. Otherwise, it should return
@@ -22,6 +24,8 @@ private:
      * @return If the item is found, return the index of id. Otherwise, return 999999999
      */
     unsigned int find(char id) const;
+
+    void sort();
 
     /**
      * @brief Checks if all items have been initialized with a World Description,
@@ -32,6 +36,9 @@ private:
     bool isInvariantTrue() const;
 
 public:
+    /**
+     * @brief Sets item_count to zero, creates a dynamic array of size 0.
+     */
     ItemManager();
 
     /**
@@ -41,10 +48,11 @@ public:
      */
     ItemManager(const string &game_name);
 
-    ItemManager (const ItemManager& to_copy);
+    ItemManager(const ItemManager &to_copy);
 
-    ~ItemManager ();
-    ItemManager& operator= (const ItemManager& to_copy);
+    ~ItemManager();
+
+    ItemManager &operator=(const ItemManager &to_copy);
 
     /**
      * @brief returns the amount of items in the itemManager

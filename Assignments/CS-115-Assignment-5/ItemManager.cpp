@@ -4,127 +4,186 @@
 
 #include "ItemManager.h"
 #include <cassert>
+#include <fstream>
 
 using namespace std;
 
 // private
-unsigned int ItemManager::find(char id) const {
-    for (int i = 0; i < ITEM_COUNT; i++) {
-        if (items[i].getId() == id) {
-            return i;
-        }
+void ItemManager::load(const std::string &filename) {
+    ifstream fin;
+    fin.open(filename);
+    string temp_string;
+    fin >> item_count;
+    item_ptr = new Item[item_count];
+    getline(fin, temp_string);
+
+
+    for (int i = 0; i < item_count; i++) {
+        char id;
+        unsigned int starting_location;
+        int points_value;
+        string world_description;
+        string inventory_description;
+
+        fin >> id >> starting_location >> points_value;
+        getline(fin, temp_string);
+        getline(fin, world_description);
+        getline(fin, inventory_description);
+        item_ptr[i] = Item(
+                id,
+                Location(starting_location),
+                points_value,
+                world_description,
+                inventory_description);
+
+        getline(fin, temp_string); // for the blanks in between
     }
+}
+
+// private
+unsigned int ItemManager::find(char id) const {
+
+    int mid;
+    int low = 0;
+    int high = item_count;
+
+    while (low <= high) {
+        mid = (low + high) / 2;
+
+        if (item_ptr[mid].getId() == id)
+            return mid;
+        else if (item_ptr[mid].getId() < id)     // intArray[mid] < target
+            low = mid + 1;
+        else
+            high = mid - 1;
+    }
+
     return NO_SUCH_ITEM;
 }
+
+void ItemManager::sort() {
+    // insertion sort
+
+    int j, insert_index;
+    Item x;
+    for (int i = 0; i < item_count; i++) {
+        // save the element from position i in the array
+        x = item_ptr[i];
+        // Find the insertion point
+        insert_index = 0;
+        while ((insert_index < i) && item_ptr[insert_index] < x) {
+            insert_index++;
+        }
+
+        // Shift the elements between here and the last sorted one
+        for (j = i; j > insert_index; j--) {
+            item_ptr[j] = item_ptr[j - 1];
+        }
+        // Store x at the insertion point
+        item_ptr[insert_index] = x;
+    }
+}
+
 
 // private
 bool ItemManager::isInvariantTrue() const {
     bool isInvariant = true;
-    for (int i = 0; i < ITEM_COUNT; i++) {
-        if (!items[i].isInitialized()) {
+    if (item_ptr == nullptr) {
+        return false;
+    }
+    for (int i = 0; i < item_count; i++) {
+        if (!item_ptr[i].isInitialized()) {
+            isInvariant = false;
+        }
+    }
+    for (int i = 0; i < item_count - 1; i++) {
+        if (!(item_ptr[i] < item_ptr[i + 1])) {
             isInvariant = false;
         }
     }
     return isInvariant;
 }
 
-ItemManager::ItemManager(const string &game_name) {
-    items[0] = { // scarab beetle
-            's',
-            Location(3),
-            -5,
-            "There is a black scarab beetle (s) here.",
-            "A black scarab beetle (s) is crawling up your arm."
-    };
-    items[1] = { // candle stick
-            'c',
-            Location(7),
-            9,
-            "There is a silver candlestick (c) here.",
-            "You are carrying a silver candlestick (c)."
-    };
-    items[2] = { // key
-            'k',
-            Location(13),
-            3,
-            "There is an old iron key (k) here.",
-            "You have an old iron key (k) in your pocket."
-    };
-    items[3] = { // tarantula
-            't',
-            Location(19),
-            -8,
-            "There is a tarantula (t) here.",
-            "There is a tarantula (t) hanging on your shirt."
-    };
-    items[4] = { // book
-            'b',
-            Location(22),
-            4,
-            "There is a book (b) here with an eye drawn on the cover.",
-            "You have a book (b) under your arm with an eye drawn on the cover."
-    };
-    items[5] = { // moth
-            'm',
-            Location(37),
-            -2,
-            "There is a giant moth (m) sleeping here.",
-            "A giant moth (m) is perched on your shoulder."
-    };
-    items[6] = { //amulet
-            'p',
-            Location(52),
-            7,
-            "There is a golden pendant (p) here.",
-            "You are wearing a golden pendant (p)."
-    };
-    items[7] = { // dagger
-            'd',
-            Location(53),
-            1,
-            "There is a rune-carved dagger (d) here.",
-            "You have a rune-carved dagger (d) stuck in your belt."
-    };
-    items[8] = { // ring
-            'r',
-            Location(58),
-            10,
-            "There is a diamond ring (r) here.",
-            "You are wearing a diamond ring (r)."
-    };
+ItemManager::ItemManager() {
+    item_count = 0;
+    item_ptr = new Item[item_count];
     assert(isInvariantTrue());
+}
+
+ItemManager::ItemManager(const string &game_name) {
+    item_ptr = nullptr;
+    string filename = game_name + "_items.txt";
+    load(filename);
+    sort();
+    assert(isInvariantTrue());
+}
+
+ItemManager::ItemManager(const ItemManager &to_copy) {
+    assert(to_copy.isInvariantTrue());
+    item_count = to_copy.item_count;
+    item_ptr = new Item[item_count];
+    for (int i = 0; i < item_count; i++) {
+        item_ptr[i] = to_copy.item_ptr[i];
+    }
+    assert(isInvariantTrue());
+}
+
+ItemManager::~ItemManager() {
+    assert(isInvariantTrue());
+    delete[] item_ptr;
+    item_ptr = nullptr;
+}
+
+ItemManager &ItemManager::operator=(const ItemManager &to_copy) {
+    assert(isInvariantTrue());
+    assert(to_copy.isInvariantTrue());
+    if (&to_copy != this) {
+        // destroy the current instance
+        delete[] item_ptr;
+        item_ptr = nullptr;
+
+        // copy everything from the passed instance
+        item_count = to_copy.item_count;
+        item_ptr = new Item[item_count];
+
+        for (int i = 0; i < item_count; i++) {
+            item_ptr[i] = to_copy.item_ptr[i];
+        }
+        assert(isInvariantTrue());
+    }
+    return *this;
 }
 
 unsigned int ItemManager::getCount() const {
     assert(isInvariantTrue());
-    return ITEM_COUNT;
+    return item_count;
 }
 
 int ItemManager::getScore() const {
     assert(isInvariantTrue());
     int score = 0;
-    for (int i = 0; i < ITEM_COUNT; i++) {
-        score += items[i].getPlayerPoints(); //tally players score
+    for (int i = 0; i < item_count; i++) {
+        score += item_ptr[i].getPlayerPoints(); //tally players score
     }
     return score;
 }
 
 void ItemManager::printAtLocation(const Location &location) const {
     assert(isInvariantTrue());
-    for (int i = 0; i < ITEM_COUNT; i++) {
+    for (int i = 0; i < item_count; i++) {
         // if the item is in the row & column to search
-        if (items[i].isAtLocation(location)) {
+        if (item_ptr[i].isAtLocation(location)) {
             // print the item's description
-            items[i].printDescription();
+            item_ptr[i].printDescription();
         } // end if
     } // end for
 }
 
 void ItemManager::printInventory() const {
     assert(isInvariantTrue());
-    for (int i = 0; i < ITEM_COUNT; i++) {
-        if (items[i].isInInventory()) {
-            items[i].printDescription();
+    for (int i = 0; i < item_count; i++) {
+        if (item_ptr[i].isInInventory()) {
+            item_ptr[i].printDescription();
         }
     }
 }
@@ -135,7 +194,7 @@ bool ItemManager::isInInventory(char id) const {
     if (i == NO_SUCH_ITEM) {
         return false;
     }
-    if (items[i].isInInventory()) {
+    if (item_ptr[i].isInInventory()) {
         return true;
     }
     return false;
@@ -143,8 +202,8 @@ bool ItemManager::isInInventory(char id) const {
 
 void ItemManager::reset() {
     assert(isInvariantTrue());
-    for (int i = 0; i < ITEM_COUNT; i++) {
-        items[i].reset();
+    for (int i = 0; i < item_count; i++) {
+        item_ptr[i].reset();
     }
     assert(isInvariantTrue());
 }
@@ -157,8 +216,8 @@ bool ItemManager::take(char id, const Location &player_location) {
         assert(isInvariantTrue());
         return false;
     }
-    if (items[i].isAtLocation(player_location)) {
-        items[i].moveToInventory();
+    if (item_ptr[i].isAtLocation(player_location)) {
+        item_ptr[i].moveToInventory();
         assert(isInvariantTrue());
         return true;
     }
@@ -175,9 +234,9 @@ bool ItemManager::leave(char id, const Location &player_location) {
         assert(isInvariantTrue());
         return false;
     }
-    if (items[i].isInInventory()) {
-        items[i].reset();
-        items[i].moveToLocation(player_location);
+    if (item_ptr[i].isInInventory()) {
+        item_ptr[i].reset();
+        item_ptr[i].moveToLocation(player_location);
         assert(isInvariantTrue());
         return true;
     }

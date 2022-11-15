@@ -49,7 +49,7 @@ int main() {
 //    <4> playerRow: the players current row location
 //    <5> playerCol: the players current column location
 //    <6> items[]: an array of items to consider within the world
-//    <7> ITEM_COUNT: the size of items
+//    <7> item_count: the size of items
 //  Precondition(s):
 //    <1>  userInput has content
 //    <2>  world has been loaded with all nodes and descriptions

@@ -1,0 +1,37 @@
+9
+
+s	3	-5
+There is a black scarab beetle (s) here.
+A black scarab beetle (s) is crawling up your arm.
+
+c	7	9
+There is a silver candlestick (c) here.
+You are carrying a silver candlestick (c).
+
+k	13	3
+There is an old iron key (k) here.
+You have an old iron key (k) in your pocket.
+
+t	19	-8
+There is a tarantula (t) here.
+There is a tarantula (t) hanging on your shirt.
+
+b	22	4
+There is a book (b) here with an eye drawn on the cover.
+You have a book (b) under your arm with an eye drawn on the cover.
+
+m	37	-2
+There is a giant moth (m) sleeping here.
+A giant moth (m) is perched on your shoulder.
+
+p	52	7
+There is a golden pendant (p) here.
+You are wearing a golden pendant (p).
+
+d	53	1
+There is a rune-carved dagger (d) here.
+You have a rune-carved dagger (d) stuck in your belt.
+
+r	58	10
+There is a diamond ring (r) here.
+You are wearing a diamond ring (r).
