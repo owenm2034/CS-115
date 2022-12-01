@@ -1,6 +1,6 @@
 // Name: Owen Monus
 // Student Number: 200482797
-// Date: Nov 10, 2022
+// Date: Dedc 1, 2022
 
 #include "ItemManager.h"
 #include <cassert>
@@ -52,7 +52,7 @@ unsigned int ItemManager::find(char id) const {
 
         if (item_ptr[mid].getId() == id)
             return mid;
-        else if (item_ptr[mid].getId() < id)     // intArray[mid] < target
+        else if (item_ptr[mid].getId() < id)
             low = mid + 1;
         else
             high = mid - 1;

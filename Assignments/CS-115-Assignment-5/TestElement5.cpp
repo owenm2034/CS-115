@@ -492,7 +492,7 @@ bool compareLinkedLists (const Element* p_original,
 			}
 			else if(p_copy->p_next == p_copy_head)
 			{
-				cout << "* Incorrect: Next pointer for element " << i << " points at the lists head" << endl;
+				cout << "* Incorrect: Next pointer for element " << i << " points at the lists p_head" << endl;
 				return false;
 			}
 			else if(p_copy->p_next == p_original->p_next ||

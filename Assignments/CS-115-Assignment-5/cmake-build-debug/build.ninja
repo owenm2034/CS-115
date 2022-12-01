@@ -76,6 +76,12 @@ build CMakeFiles/CS_115_Assignment_5.dir/ItemManager.cpp.o: CXX_COMPILER__CS_115
   OBJECT_DIR = CMakeFiles/CS_115_Assignment_5.dir
   OBJECT_FILE_DIR = CMakeFiles/CS_115_Assignment_5.dir
 
+build CMakeFiles/CS_115_Assignment_5.dir/ScoreTable.cpp.o: CXX_COMPILER__CS_115_Assignment_5_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/ScoreTable.cpp || cmake_object_order_depends_target_CS_115_Assignment_5
+  DEP_FILE = CMakeFiles/CS_115_Assignment_5.dir/ScoreTable.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++11
+  OBJECT_DIR = CMakeFiles/CS_115_Assignment_5.dir
+  OBJECT_FILE_DIR = CMakeFiles/CS_115_Assignment_5.dir
+
 build CMakeFiles/CS_115_Assignment_5.dir/Game.cpp.o: CXX_COMPILER__CS_115_Assignment_5_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/Game.cpp || cmake_object_order_depends_target_CS_115_Assignment_5
   DEP_FILE = CMakeFiles/CS_115_Assignment_5.dir/Game.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++11
@@ -96,7 +102,7 @@ build CMakeFiles/CS_115_Assignment_5.dir/main.cpp.o: CXX_COMPILER__CS_115_Assign
 #############################################
 # Link the executable CS_115_Assignment_5
 
-build CS_115_Assignment_5: CXX_EXECUTABLE_LINKER__CS_115_Assignment_5_Debug CMakeFiles/CS_115_Assignment_5.dir/Location.cpp.o CMakeFiles/CS_115_Assignment_5.dir/Node.cpp.o CMakeFiles/CS_115_Assignment_5.dir/World.cpp.o CMakeFiles/CS_115_Assignment_5.dir/Item.cpp.o CMakeFiles/CS_115_Assignment_5.dir/ItemManager.cpp.o CMakeFiles/CS_115_Assignment_5.dir/Game.cpp.o CMakeFiles/CS_115_Assignment_5.dir/main.cpp.o
+build CS_115_Assignment_5: CXX_EXECUTABLE_LINKER__CS_115_Assignment_5_Debug CMakeFiles/CS_115_Assignment_5.dir/Location.cpp.o CMakeFiles/CS_115_Assignment_5.dir/Node.cpp.o CMakeFiles/CS_115_Assignment_5.dir/World.cpp.o CMakeFiles/CS_115_Assignment_5.dir/Item.cpp.o CMakeFiles/CS_115_Assignment_5.dir/ItemManager.cpp.o CMakeFiles/CS_115_Assignment_5.dir/ScoreTable.cpp.o CMakeFiles/CS_115_Assignment_5.dir/Game.cpp.o CMakeFiles/CS_115_Assignment_5.dir/main.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk
   OBJECT_DIR = CMakeFiles/CS_115_Assignment_5.dir
   POST_BUILD = :
@@ -214,6 +220,92 @@ build Part_A.16_Test: CXX_EXECUTABLE_LINKER__Part_A.2e16_Test_Debug CMakeFiles/P
   TARGET_FILE = Part_A.16_Test
   TARGET_PDB = Part_A.16_Test.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target Part_B_Test
+
+
+#############################################
+# Order-only phony target for Part_B_Test
+
+build cmake_object_order_depends_target_Part_B_Test: phony || CMakeFiles/Part_B_Test.dir
+
+build CMakeFiles/Part_B_Test.dir/ScoreTable.cpp.o: CXX_COMPILER__Part_B_Test_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/ScoreTable.cpp || cmake_object_order_depends_target_Part_B_Test
+  DEP_FILE = CMakeFiles/Part_B_Test.dir/ScoreTable.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++11
+  OBJECT_DIR = CMakeFiles/Part_B_Test.dir
+  OBJECT_FILE_DIR = CMakeFiles/Part_B_Test.dir
+
+build CMakeFiles/Part_B_Test.dir/TestHelper.cpp.o: CXX_COMPILER__Part_B_Test_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/TestHelper.cpp || cmake_object_order_depends_target_Part_B_Test
+  DEP_FILE = CMakeFiles/Part_B_Test.dir/TestHelper.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++11
+  OBJECT_DIR = CMakeFiles/Part_B_Test.dir
+  OBJECT_FILE_DIR = CMakeFiles/Part_B_Test.dir
+
+build CMakeFiles/Part_B_Test.dir/TestElement5.cpp.o: CXX_COMPILER__Part_B_Test_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/TestElement5.cpp || cmake_object_order_depends_target_Part_B_Test
+  DEP_FILE = CMakeFiles/Part_B_Test.dir/TestElement5.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++11
+  OBJECT_DIR = CMakeFiles/Part_B_Test.dir
+  OBJECT_FILE_DIR = CMakeFiles/Part_B_Test.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Part_B_Test
+
+
+#############################################
+# Link the executable Part_B_Test
+
+build Part_B_Test: CXX_EXECUTABLE_LINKER__Part_B_Test_Debug CMakeFiles/Part_B_Test.dir/ScoreTable.cpp.o CMakeFiles/Part_B_Test.dir/TestHelper.cpp.o CMakeFiles/Part_B_Test.dir/TestElement5.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk
+  OBJECT_DIR = CMakeFiles/Part_B_Test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Part_B_Test
+  TARGET_PDB = Part_B_Test.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target Part_C_Test
+
+
+#############################################
+# Order-only phony target for Part_C_Test
+
+build cmake_object_order_depends_target_Part_C_Test: phony || CMakeFiles/Part_C_Test.dir
+
+build CMakeFiles/Part_C_Test.dir/ScoreTable.cpp.o: CXX_COMPILER__Part_C_Test_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/ScoreTable.cpp || cmake_object_order_depends_target_Part_C_Test
+  DEP_FILE = CMakeFiles/Part_C_Test.dir/ScoreTable.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++11
+  OBJECT_DIR = CMakeFiles/Part_C_Test.dir
+  OBJECT_FILE_DIR = CMakeFiles/Part_C_Test.dir
+
+build CMakeFiles/Part_C_Test.dir/TestHelper.cpp.o: CXX_COMPILER__Part_C_Test_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/TestHelper.cpp || cmake_object_order_depends_target_Part_C_Test
+  DEP_FILE = CMakeFiles/Part_C_Test.dir/TestHelper.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++11
+  OBJECT_DIR = CMakeFiles/Part_C_Test.dir
+  OBJECT_FILE_DIR = CMakeFiles/Part_C_Test.dir
+
+build CMakeFiles/Part_C_Test.dir/TestScoreTable5.cpp.o: CXX_COMPILER__Part_C_Test_Debug /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/TestScoreTable5.cpp || cmake_object_order_depends_target_Part_C_Test
+  DEP_FILE = CMakeFiles/Part_C_Test.dir/TestScoreTable5.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk -std=gnu++11
+  OBJECT_DIR = CMakeFiles/Part_C_Test.dir
+  OBJECT_FILE_DIR = CMakeFiles/Part_C_Test.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Part_C_Test
+
+
+#############################################
+# Link the executable Part_C_Test
+
+build Part_C_Test: CXX_EXECUTABLE_LINKER__Part_C_Test_Debug CMakeFiles/Part_C_Test.dir/ScoreTable.cpp.o CMakeFiles/Part_C_Test.dir/TestHelper.cpp.o CMakeFiles/Part_C_Test.dir/TestScoreTable5.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.0.sdk
+  OBJECT_DIR = CMakeFiles/Part_C_Test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Part_C_Test
+  TARGET_PDB = Part_C_Test.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -248,7 +340,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/cmake-build-debug
 
-build all: phony CS_115_Assignment_5 Part_A_Test Part_A.16_Test
+build all: phony CS_115_Assignment_5 Part_A_Test Part_A.16_Test Part_B_Test Part_C_Test
 
 # =============================================================================
 # Built-in targets

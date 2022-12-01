@@ -1,5 +1,7 @@
 /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/cmake-build-debug/CMakeFiles/CS_115_Assignment_5.dir
 /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/cmake-build-debug/CMakeFiles/Part_A_Test.dir
 /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/cmake-build-debug/CMakeFiles/Part_A.16_Test.dir
+/Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/cmake-build-debug/CMakeFiles/Part_B_Test.dir
+/Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/cmake-build-debug/CMakeFiles/Part_C_Test.dir
 /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/owenm/Documents/GitHub/CS-115/Assignments/CS-115-Assignment-5/cmake-build-debug/CMakeFiles/rebuild_cache.dir
