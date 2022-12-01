@@ -17,7 +17,10 @@ bool stringHasContent(string toCheck) {
     }
 
     for (int i = 0; i < toCheck.length(); i++) {
-        if (toCheck.at(i) != ' ' || toCheck.at(i) != '\n' || toCheck.at(i) != '\0') {
+        if (toCheck.at(i) == '\r') {
+            return false;
+        }
+        if ((toCheck.at(i) != ' ' || toCheck.at(i) != '\n') || (toCheck.at(i) != '\0')) {
             return true;
         }
     }
@@ -123,7 +126,7 @@ bool World::isInvariantTrue() const {
     }
 
     for (int i = 0; i < node_count; i++) {
-        if (!(descriptions[i] != "")) {
+        if (descriptions[i].empty()) {
             cout << "descriptions at " << i << " is \"\"" << endl;
             return false;
         }

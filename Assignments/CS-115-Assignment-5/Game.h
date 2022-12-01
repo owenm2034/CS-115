@@ -2,12 +2,14 @@
 // Student Number: 200482797
 // Date: Nov 10, 2022
 
+#pragma once
 #ifndef CS_115_ASSIGNMENT_4_GAME_H
 #define CS_115_ASSIGNMENT_4_GAME_H
 
 #include "World.h"
 #include "ItemManager.h"
 #include "Location.h"
+#include "ScoreTable.h"
 
 /**
  * @invariant something
@@ -17,6 +19,7 @@ private:
     ItemManager itemManager;
     World world;
     Location playerLocation;
+    ScoreTable scoreTable;
 
     /**
      * @brief The class invariant requires that the player location is valid
@@ -108,6 +111,12 @@ public:
      * @param id the id(char) of the item to take
      */
     void leaveItem(char id);
+
+    /**
+     * @brief Updates and displays the score table
+     * @param name string with a player name
+     */
+    void updateScoreTable(string name);
 };
 
 

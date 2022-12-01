@@ -1,6 +1,6 @@
 // Name: Owen Monus
 // Student Number: 200482797
-// Date: Nov 10, 2022
+// Date: Dec 1, 2022
 
 #include "Game.h"
 #include <iostream>
@@ -8,17 +8,26 @@
 using namespace std;
 
 // helper function declarations
-void handlePlayerInput(string &userInput, bool &gameIsValid, Game &game);
+void handlePlayerInput(string &userInput, string name, bool &gameIsValid, Game &game);
 
 int main() {
     // initialize variables
     string userInput;
     bool gameIsValid = true;
-    Game game = Game("ghostwood");
+    Game game = Game("jungle");
+    string name;
 
-    // begin game
+    // welcome message
     game.printStartMessage();
     cout << '\n';
+
+    // ask for player info
+    cout << "Before we begin, please enter your username" << endl;
+    getline(cin, name);
+    cout << "Hello, " << name << "!" << endl;
+
+
+    // begin game
     game.printDescription();
     cout << '\n';
 
@@ -26,12 +35,13 @@ int main() {
     while (!game.isOver() && gameIsValid) {
         cout << "Next? ";
         getline(cin, userInput);
-        handlePlayerInput(userInput, gameIsValid, game);
+        handlePlayerInput(userInput,name, gameIsValid, game);
     } // end while
 
     // print the end message and score
     game.printEndMessage();
     game.printScore();
+    game.updateScoreTable(name);
 
     return 0;
 }
@@ -49,7 +59,7 @@ int main() {
 //    <4> playerRow: the players current row location
 //    <5> playerCol: the players current column location
 //    <6> items[]: an array of items to consider within the world
-//    <7> ITEM_COUNT: the size of items
+//    <7> item_count: the size of items
 //  Precondition(s):
 //    <1>  userInput has content
 //    <2>  world has been loaded with all nodes and descriptions
@@ -59,7 +69,7 @@ int main() {
 //    <1> If there is an item in items[] that is at the provided index, its description
 //        will be printed out
 //
-void handlePlayerInput(string &userInput, bool &gameIsValid, Game &game) {
+void handlePlayerInput(string &userInput, string name, bool &gameIsValid, Game &game) {
     switch (userInput[0]) {
         case '#': { //if a comment is entered
             break; //do nothing
@@ -115,6 +125,8 @@ void handlePlayerInput(string &userInput, bool &gameIsValid, Game &game) {
             cout << "Are you sure you want to restart? ";
             getline(cin, userInput);
             if (userInput[0] == 'y') {
+                cout << '\n';
+                game.updateScoreTable(name);
                 game.reset();
                 cout << '\n';
                 game.printStartMessage();

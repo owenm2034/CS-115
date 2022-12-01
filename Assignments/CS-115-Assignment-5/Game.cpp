@@ -109,3 +109,8 @@ void Game::takeItem(char id) {
     itemManager.take(id, playerLocation);
     assert(isInvariantTrue());
 }
+
+void Game::updateScoreTable(string name) {
+    scoreTable.insert(name, itemManager.getScore());
+    scoreTable.print();
+}
