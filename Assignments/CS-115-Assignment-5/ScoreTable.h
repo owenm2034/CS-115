@@ -5,6 +5,7 @@
 #ifndef CS_115_ASSIGNMENT_5_SCORETABLE_H
 #define CS_115_ASSIGNMENT_5_SCORETABLE_H
 
+#pragma once
 #include <string>
 
 using namespace std;

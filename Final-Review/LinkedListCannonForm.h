@@ -1,28 +1,28 @@
-class Node {
+template <typename data_type> class Node {
 public:
   Node *p_next;
-  int datum;
+  data_type datum;
 
-  Node(Node *p_next, int datum);
+  Node<data_type>(Node<data_type> *p_next, data_type datum);
 
-  Node();
-  Node &operator=(Node &toAssign);
-  Node(const Node &toCopy);
+  Node<data_type>();
+  Node<data_type> &operator=(Node<data_type> &toAssign);
+  Node<data_type>(const Node<data_type> &toCopy);
 };
 
-class LinkedList {
+template <typename data_type> class LinkedList {
 public:
   LinkedList();
-  LinkedList(const LinkedList &toCopy);
+  LinkedList(const LinkedList<data_type> &toCopy);
   ~LinkedList();
-  LinkedList &operator=(const LinkedList &toCooy);
+  LinkedList &operator=(const LinkedList<data_type> &toCooy);
 
   const bool empty();
   unsigned int memberCount();
-  void remove(int datum);
-  void insert(int datum);
+  void remove(data_type datum);
+  void insert(data_type datum);
   void print();
 
 private:
-  Node *head;
+  Node<data_type> *head;
 };
