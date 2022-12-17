@@ -1,6 +1,5 @@
 #include "LinkedListCannonForm.h"
-#include <algorithm>
-#include <cstddef>
+#include <iostream>
 using namespace std;
 
 Node::Node(Node *p_next, int datum) : p_next(p_next), datum(datum){};
@@ -26,65 +25,112 @@ Node::Node(const Node &toCopy) {
 LinkedList::LinkedList() { head = nullptr; }
 
 LinkedList::LinkedList(const LinkedList &toCopy) {
-  head = toCopy.head;
-  Node *copyFrom = toCopy.head;
-  Node *current = head;
-  
-  
-  
-  while (copyFrom != nullptr) {
-  
-    current->p_next = new Node(copyFrom->p_next, copyFrom->datum);
-  
-    copyFrom = copyFrom->p_next;
-    current = current->p_next;
-  
-  }
-  
-  current->p_next = nullptr;
-}
+  Node *oldLLPtr = toCopy.head;
+  head = new Node(nullptr, oldLLPtr->datum);
 
+  if (toCopy.head != nullptr) {
+    Node *current = head;
+    while (oldLLPtr->p_next != nullptr) {
+      current->p_next = new Node();
+      current = current->p_next;
+      current->datum = oldLLPtr->p_next->datum;
+      oldLLPtr = oldLLPtr->p_next;
+    }
+    current->p_next = nullptr;
+  }
+}
 
 LinkedList::~LinkedList() {
-  Node *p_curr = head;
-  Node *p_next;
-  while (p_curr != nullptr) {
-    p_next = p_curr->p_next;
-    delete p_curr;
-    p_curr = p_next;
+  Node *pPrev = NULL;
+  Node *pCurr = head;
+
+  while (pCurr != nullptr) {
+    pPrev = pCurr;
+    pCurr = pCurr->p_next;
+    delete pPrev;
   }
-  head = nullptr;
 }
 
-LinkedList &LinkedList::operator=(LinkedList toCopy) {
-  Node *p_curr = head;
-  Node *p_next;
-  while (p_curr != nullptr) {
-    p_next = p_curr->p_next;
-    delete p_curr;
-    p_curr = p_next;
+LinkedList &LinkedList::operator=(const LinkedList &toCopy) {
+  Node *pPrev = nullptr;
+  Node *pCurr = head;
+
+  while (pCurr != nullptr) {
+    pPrev = pCurr;
+    pCurr = pCurr->p_next;
+    delete pPrev;
   }
-  head = toCopy.head;
-  Node *copyFrom = toCopy.head;
-  Node *current = head;
-  while (copyFrom != nullptr) {
-    current->p_next = new Node(copyFrom->p_next, copyFrom->datum);
-    copyFrom = copyFrom->p_next;
-    current = current->p_next;
+
+  Node *oldLLPtr = toCopy.head;
+  head = new Node(nullptr, oldLLPtr->datum);
+
+  if (toCopy.head != nullptr) {
+    Node *current = head;
+    while (oldLLPtr->p_next != nullptr) {
+      current->p_next = new Node();
+      current = current->p_next;
+      current->datum = oldLLPtr->p_next->datum;
+      oldLLPtr = oldLLPtr->p_next;
+    }
+    current->p_next = nullptr;
   }
   return *this;
 }
 
-void LinkedList::insert(int datum) {
-  Node *current = head;
-  Node *previous = nullptr;
-  while (current != nullptr && current->datum < datum) {
-    previous = current;
-    current = current->p_next;
+const bool LinkedList::empty() { return (head == nullptr); }
+
+unsigned int LinkedList::memberCount() {
+  Node *pCurr = head;
+  unsigned int memberCount = 0;
+  while (pCurr != nullptr) {
+    pCurr = pCurr->p_next;
+    memberCount++;
   }
-  if (previous == nullptr) {
-    head = new Node(head, datum);
+  return memberCount;
+}
+
+void LinkedList::remove(int datum) {
+  Node *pPrev = nullptr;
+  Node *pCurr = head;
+
+  if (head->datum == datum) {
+    pPrev = head;
+    head = head->p_next;
+    delete pPrev;
   } else {
-    previous->p_next = new Node(current, datum);
+    while (pCurr != nullptr && pCurr->datum < datum) {
+      pPrev = pCurr;
+      pCurr = pCurr->p_next;
+    }
+    if (pCurr == nullptr) {
+      pPrev->p_next = new Node(nullptr, datum);
+    } else {
+      Node *pTemp = pCurr;
+      pPrev->p_next = pCurr->p_next;
+      delete pTemp;
+    }
   }
+}
+void LinkedList::insert(int datum) {
+  Node *pPrev = nullptr;
+  Node *pCurr = head;
+
+  while (pCurr != nullptr && pCurr->datum < datum) {
+    pPrev = pCurr;
+    pCurr = pCurr->p_next;
+  }
+  if (pPrev == nullptr) {
+    Node *pTemp = new Node(head, datum);
+    head = pTemp;
+  } else {
+    Node *pTemp = new Node(pPrev->p_next, datum);
+    pPrev->p_next = pTemp;
+  }
+}
+void LinkedList::print() {
+  Node *pCurr = head;
+  for (Node *pCurr = head; pCurr != NULL; pCurr = pCurr->p_next) {
+    cout << pCurr->datum << '\t';
+  }
+  cout << endl;
 }
